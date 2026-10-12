@@ -1,0 +1,57 @@
+﻿layer,id,endpoint,condition,expected,actual,kind,verdict
+Gateway HTTP,,/health,"engineering, ready",HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/health,no runtime config,HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,"engineering, ready",HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,"formal, empty approval list",HTTP 503 MODEL_NOT_APPROVED,HTTP 503 MODEL_NOT_APPROVED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,no runtime config,HTTP 503 CONFIG_MISSING,HTTP 503 CONFIG_MISSING,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,AIR missing,HTTP 400 AIR_MISSING,HTTP 400 AIR_MISSING,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,client declares other mode,HTTP 400 MODE_MISMATCH,HTTP 400 MODE_MISMATCH,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,"engineering, non-local client",HTTP 403 CLIENT_NOT_ALLOWED,HTTP 403 CLIENT_NOT_ALLOWED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,bad warmup_sec,HTTP 400 BAD_REQUEST,HTTP 400 BAD_REQUEST,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/calibrate,"engineering, ready",HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/calibrate,no runtime config,HTTP 503 CONFIG_MISSING,HTTP 503 CONFIG_MISSING,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/status,missing scan_id,HTTP 400 SCAN_ID_REQUIRED,HTTP 400 SCAN_ID_REQUIRED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/status,unknown scan_id,HTTP 404 SCAN_NOT_FOUND,HTTP 404 SCAN_NOT_FOUND,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/status,"engineering, non-local client",HTTP 403 CLIENT_NOT_ALLOWED,HTTP 403 CLIENT_NOT_ALLOWED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/cancel,missing scan_id,HTTP 400 BAD_REQUEST,HTTP 400 BAD_REQUEST,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/cancel,unknown scan_id,HTTP 404 SCAN_NOT_FOUND,HTTP 404 SCAN_NOT_FOUND,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records,uncommitted scan_id,HTTP 409 SCAN_NOT_COMMITTED,HTTP 409 SCAN_NOT_COMMITTED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records,legacy payload without scan_id,HTTP 409 SCAN_NOT_COMMITTED,HTTP 409 SCAN_NOT_COMMITTED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records/<id>/feedback,unknown id,HTTP 404 SCAN_NOT_COMMITTED,HTTP 404 SCAN_NOT_COMMITTED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan,device busy,HTTP 409 DEVICE_BUSY,HTTP 409 DEVICE_BUSY,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/calibrate,device busy,HTTP 409 DEVICE_BUSY,HTTP 409 DEVICE_BUSY,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/status,own scan in progress,HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/cancel,active scan,HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/cancel,repeated cancel,HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/cancel,already finished,HTTP 409 SCAN_ALREADY_FINISHED,HTTP 409 SCAN_ALREADY_FINISHED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records,TEST scan declared FORMAL,HTTP 409 RESULT_KIND_MISMATCH,HTTP 409 RESULT_KIND_MISMATCH,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records,committed TEST scan,HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records/<id>/feedback,committed scan,HTTP 200,HTTP 200,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+Gateway HTTP,,/scan_records,cancelled scan,HTTP 409 SCAN_NOT_COMMITTED,HTTP 409 SCAN_NOT_COMMITTED,RUNTIME (Gateway v2 via Flask test client; fake serial),PASS
+consumer App API client / screens,APP-C01,,正式模式（出貨核准清單為空）：apiStartScan 回報 MODEL_NOT_APPROVED，不產生 scan_id,,apiStartScan → MODEL_NOT_APPROVED; serial opened=0,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C02,,工程模式：apiStartScan → scan_id；apiGetStatus(scanId) 輪詢到 done；validateRpiResult 通過且為 TEST,,scan_id=9b8b074e kind=TEST status=done stage=transition model_status=engineering,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C03,,apiGetStatus 沒有 scan_id → Gateway 400 SCAN_ID_REQUIRED，App 拋出錯誤,,HTTP 400,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C04,,設備忙碌：第二次 apiStartScan 拋出 DEVICE_BUSY（不去追蹤別人的掃描）,,second start → DEVICE_BUSY,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C05,,已完成的舊 scan_id 只回自己的結果；拿舊結果對新 scan_id 驗證 → RESULT_SCAN_ID_MISMATCH,,status(old).result.scan_id==old: true; stale validate → RESULT_SCAN_ID_MISMATCH,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C06,,連線失敗：apiStartScan 拋出錯誤（不產生結果）,,fetch failed,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C07,,無效回應（noid）：apiStartScan → INCOMPLETE_RESPONSE,,INCOMPLETE_RESPONSE,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C08,,無效回應（html）：apiStartScan → INCOMPLETE_RESPONSE,,INCOMPLETE_RESPONSE,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C09,,SensorContext.startScan（工程模式）：結果帶 scanId、resultKind=TEST；環境值來自量測,,resultKind=TEST scanId=559d2de3 ripeness=transition temp=23.57 humidity=57.65,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C10,,SensorContext：感測列沒有環境值 → temperature／humidity／pressure 為 null（不填 25／65／1013）,,"processed={""t"":null,""h"":null,""p"":null} raw.Temp_C=null",RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C11-NAN,,SensorContext：ADC nan → startScan 失敗（ADC_INVALID），不寫入 TEST 歷史,,startScan → ADC_INVALID; history_test 5→5,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C11-INF,,SensorContext：ADC inf → startScan 失敗（ADC_INVALID），不寫入 TEST 歷史,,startScan → ADC_INVALID; history_test 5→5,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C11-RANGE,,SensorContext：ADC range → startScan 失敗（ADC_INVALID），不寫入 TEST 歷史,,startScan → ADC_INVALID; history_test 5→5,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C11-MISSING,,SensorContext：ADC missing → startScan 失敗（ADC_INVALID），不寫入 TEST 歷史,,startScan → ADC_INVALID; history_test 5→5,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C12,,SensorContext：掃描中 cancelCurrentScan → startScan 失敗、Gateway 狀態 cancelled、不寫入、序列埠關閉,,startScan → SCAN_CANCELLED; gateway cancelled records +1; history_test 5→5; serial closed=true,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C13,,SensorContext：輪詢逾時（120 s，以假 Date.now 推進）→ SCAN_TIMEOUT，並對 Gateway 送出取消,,startScan → SCAN_TIMEOUT; gateway last failure=cancelled/SCAN_CANCELLED,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C14,,SensorContext：後端回傳不完整的 done 結果 → INCOMPLETE_RESPONSE（不顯示成熟度）,,startScan → INCOMPLETE_RESPONSE,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C15,,validateRpiResult：measurement_valid=false／機率非有限／argmax 不一致 → 拒絕,,measurement_valid=false:MEASUREMENT_INVALID; NaN probability:INCOMPLETE_RESPONSE; argmax mismatch:INCOMPLETE_RESPONSE; result_kind FORMAL on TEST scan:RESULT_KIND_MISMATCH,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C16,,CalibrationContext：正式模式校正以 scan_id 追蹤到 done；Gateway 寫入一筆校正紀錄,,"finished=true lastError=null calibration records=1 meta={source:live, mode:formal, device_id:null}",RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C17,,CalibrationContext：連不到後端 → 顯示「空氣校正失敗」，不本地倒數假裝完成,,"isCalibrating=false lastError=fetch failed alerts=[""空氣校正失敗""]",RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+consumer App API client / screens,APP-C23,,掃描畫面：掃描中離開（unmount）→ App 呼叫 /cancel，Gateway 狀態 cancelled、不寫入 TEST 歷史,,"after unmount: gateway failure records=[""cancelled/SCAN_CANCELLED""]; history_test=0",RUNTIME (real app/processing.tsx + real SensorProvider; language/trivia contexts stubbed),PASS
+consumer App API client / screens,APP-C22,,結果頁：TEST 結果顯示「TEST（工程測試結果，非正式判定）」；正式結果不顯示；展開詳細資料後環境值缺失顯示「—」,,TEST page badge=true; FORMAL page badge=false; null env shows —=true; measured env shown=true,RUNTIME (real app/result.tsx rendered with react-test-renderer + react-native-web; details toggle pressed; contexts stubbed to supply the result),PASS
+farmer App API client / screens,APP-F01,,Farmer services/api.startScan：拋出 FARMER_SENSOR_NOT_CONNECTED（無 mock、無隨機、無預設值）,,FARMER_SENSOR_NOT_CONNECTED,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+farmer App API client / screens,APP-F02,,Farmer pingServer 對真實 Gateway：Gateway 沒有 /ping → false（Farmer 與 Gateway 沒有可用的掃描契約）,,pingServer(http://127.0.0.1:65203) → false,RUNTIME (real App TS modules + real Gateway over loopback; fake serial),PASS
+farmer App API client / screens,APP-F03,,Farmer 批次掃描畫面：按下掃描 → 提示「無法掃描」，不建立樣本、不顯示成熟度／糖度／風險／信心值,,"alert=[""無法掃描""] samples=0 screen notice shown=true","RUNTIME (real BatchScanScreen + real AppProvider, react-test-renderer with react-native-web; Alert recorded)",PASS
+farmer App API client / screens,APP-F04,,Farmer 批次摘要：沒有樣本時平均糖度顯示「—」，不顯示 0.0 Brix,,summary shows —=true shows 0.0=false,RUNTIME (real BatchSummaryScreen + real AppProvider),PASS
+consumer App API client / screens,APP-C30,,完整重播 99 筆 Gateway 回應都通過 Consumer App 的 validateRpiResult（結果類型 TEST）,,99/99 accepted; rejected=,RUNTIME (real App validation code on real Gateway replay payloads),PASS

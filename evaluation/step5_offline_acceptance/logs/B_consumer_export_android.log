@@ -1,0 +1,36 @@
+$ C:/Users/user/AppData/Local/Programs/Microsoft VS Code/Code.exe C:\Users\user\AppData\Local\Temp\s5m\consumer\node_modules\expo\bin\cli export --platform android --output-dir C:\Users\user\AppData\Local\Temp\s5m\build-consumer-android
+# cwd: C:\Users\user\AppData\Local\Temp\s5m\consumer
+
+Starting Metro Bundler
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 77/204)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.0% (434/549)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.0% (625/794)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.5% (1071/2648)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.5% (2254/2664)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (2762/2762)
+Android Bundled 29000ms ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js (2762 modules)
+Android ..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (2762/2762)
+
+› Assets (25):
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\@react-navigation\elements\lib\module\assets\back-icon-mask.png (653 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\@react-navigation\elements\lib\module\assets\back-icon.png (4 variations | 152 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\@react-navigation\elements\lib\module\assets\clear-icon.png (4 variations | 425 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\@react-navigation\elements\lib\module\assets\close-icon.png (4 variations | 235 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\@react-navigation\elements\lib\module\assets\search-icon.png (4 variations | 599 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\arrow_down.png (9.46 kB)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\error.png (469 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\file.png (138 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\forward.png (188 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\pkg.png (364 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\sitemap.png (465 B)
+..\..\..\..\..\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\app\Consumer_pineapple-ripeness-main\expo\node_modules\expo-router\assets\unmatched.png (4.75 kB)
+assets\sounds\beep.mp3 (37 kB)
+
+› android bundles (1):
+_expo/static/js/android/entry-18599a0a8928daabdcb47c8fd3d709e7.hbc (5.2 MB)
+
+› Files (1):
+metadata.json (1.88 kB)
+
+Exported: C:\Users\user\AppData\Local\Temp\s5m\build-consumer-android

@@ -1,0 +1,75 @@
+$ C:/Users/user/AppData/Local/Temp/s5v/Scripts/python.exe -u C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\step5_offline_acceptance\release_check.py
+# cwd: C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\step5_offline_acceptance
+
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（978d15e3）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（7d77daa6）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（1635c5cb）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d2c1a0ed）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（38650229）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（c21a0b12）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（b75c8925）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（a862e8d9）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（57626b69）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（ced9b356）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（926888ab）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（fa6768e3）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（6de32ced）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（972b7b86）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（92d9e0c1）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（474e21d4）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（92d322f3）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（289d1058）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（024293df）
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（c6cb65cb）
+[PASS] R01 序列埠欄位對應：韌體 header（29 欄，含 TGS2620_raw 與 logr 欄位）與 10 欄重播 → Gateway 與 CLI 特徵逐位元相同 — 10/10 days identical; firmware columns=['timestamp_ms', 'timestamp_s', 'MQ2_raw', 'MQ3_raw', 'MQ9_raw', 'MQ135_raw', 'TGS2602_raw', 'TGS2620_raw']…
+[PASS] R02 FIXED11 順序：feature_columns.json ＝ deploy_meta.json ＝ R1 訓練管線欄位順序 — ['MQ3_std_norm', 'MQ3_range_norm', 'MQ2_MQ3_ratio', 'MQ3_MQ135_ratio', 'MQ9_slope', 'TGS2602_min_norm', 'MQ2_auc_norm', 'MQ2_mean_norm', 'MQ9_min_norm', 'TGS2602_std_norm', 'MQ9_delta_mean']
+[PASS] R03 FIXED11 公式：Gateway _build_features 與 CLI build_features 對同一輸入產生相同 11 個值（另見完整重播：與 R1 ≤ 2.2e-16） — {'MQ3_std_norm': (np.float64(0.09617157164887988), np.float64(0.09617157164887988)), 'MQ3_range_norm': (np.float64(0.32222222222222224), np.float64(0.32222222222222224)), 'MQ2_MQ3_ratio': (0.991341990
+[PASS] R04 出貨的核准清單為空（正式模式預設沒有核准模型） — models={}
+[PASS] R05 沒有出貨啟用中的 pinenose_runtime.json（部署後預設 fail-closed） — absent
+[PASS] R06 範例設定的 air_max_age_sec 為 null（不提供預設期限） — {'air_max_age_sec': None}
+[PASS] R07 本次執行環境與 requirements_rpi.txt（sklearn 1.8.0, numpy 2.4.3, pandas 3.0.1） — runtime={'python': '3.12.7', 'sklearn': '1.8.0', 'numpy': '2.4.3', 'pandas': '3.0.1'}; pickle warnings=[]
+[OPEN] R08 服務埠衝突 — conflicts={5000: ['pineapple_app_gateway\\app_gateway_v2.py', 'pineapple_final\\app_local.py'], 8000: ['pineapple_app_gateway\\app_gateway.py', '整合網頁\\pineapple_unified_web\\app.py']}; start script la
+[OPEN] R09 啟動／停止腳本 — start_pineapple_system.sh 啟動 app_local.py(5000)、app_gateway.py(v1, 8000)、unified app.py(8000) → 8000 衝突；不啟動 app_gateway_v2.py；stop 腳本以 pkill -f "app.py" 會一併終止任何名稱含 app.py 的程序；整合網頁 iframe 寫死 192.168.0.
+[PASS] R10 Consumer App API client 與 Gateway 契約（scan_id、/status?scan_id、/cancel、結果欄位） — pinenose-gateway-api/2.1 sha256:de6d35f245a11672
+[PASS] R11 Farmer App 與 Gateway 沒有掃描契約（不呼叫 /scan；不產生結果） — Farmer startScan throws FARMER_SENSOR_NOT_CONNECTED; pingServer('/ping') has no Gateway route
+manifest written; FAIL: 0 OPEN: 2

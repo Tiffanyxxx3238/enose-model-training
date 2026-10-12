@@ -1,0 +1,5 @@
+$ C:/Users/user/AppData/Local/Programs/Microsoft VS Code/Code.exe C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\step5_offline_acceptance\app_integration_tests.js
+# cwd: C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\step5_offline_acceptance
+
+[PASS] APP-C30 完整重播 99 筆 Gateway 回應都通過 Consumer App 的 validateRpiResult（結果類型 TEST） — 99/99 accepted; rejected=
+consumer: 1/1 PASS

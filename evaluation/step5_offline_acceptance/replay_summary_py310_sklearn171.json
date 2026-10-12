@@ -1,0 +1,34 @@
+{
+ "eligible_S99_fruit_days": 99,
+ "unique_pineapples": 13,
+ "replayed_rows": 99,
+ "replay_PASS": 99,
+ "replay_FAIL": 0,
+ "gateway_not_done": [],
+ "max_feat_diff_gateway_vs_cli": 0.0,
+ "max_feat_diff_vs_R1": 2.220446049250313e-16,
+ "max_air_rel_diff_vs_R1": 2.1885299869407607e-16,
+ "max_proba_diff_gateway_vs_cli": 4.7619047618963073e-07,
+ "max_web_proba_diff_vs_cli": 4.2857142857205544e-05,
+ "max_proba_diff_vs_model_on_R1_features": 0.0,
+ "stage_agreement_gateway_cli_web": 99,
+ "excluded_rows_reported": 78,
+ "unified_web_iframe_targets": [
+  "http://192.168.0.152:5000",
+  "http://192.168.0.152:5002"
+ ],
+ "network_attempts": [],
+ "seconds": 148.1,
+ "runtime": {
+  "python": "3.10.11",
+  "sklearn": "1.7.1",
+  "numpy": "2.2.6",
+  "pandas": "2.3.1"
+ },
+ "stage_distribution_gateway": {
+  "0": 10,
+  "1": 41,
+  "2": 38,
+  "3": 10
+ }
+}

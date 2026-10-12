@@ -1,0 +1,12 @@
+﻿group,id,test,entrypoint,kind,verdict,evidence
+LIFECYCLE,L01-ADC-INF,ADC inf → Gateway 與 CLI 都失敗、不寫入,Gateway v2 + CLI inference_30s.main(),RUNTIME (fake serial),PASS,Gateway failed/ADC_INVALID; CLI exit 2
+LIFECYCLE,L01-ADC--INF,ADC -inf → Gateway 與 CLI 都失敗、不寫入,Gateway v2 + CLI inference_30s.main(),RUNTIME (fake serial),PASS,Gateway failed/ADC_INVALID; CLI exit 2
+LIFECYCLE,L01-ADC-TEXT,ADC text → Gateway 與 CLI 都失敗、不寫入,Gateway v2 + CLI inference_30s.main(),RUNTIME (fake serial),PASS,Gateway failed/ADC_INVALID; CLI exit 2
+LIFECYCLE,L02-HEADER-MISSING-COLUMN,header 少一欄（資料列欄數不符） → 失敗、不產生 Stage,Gateway v2 + CLI inference_30s.main(),RUNTIME (fake serial),PASS,Gateway failed/INSUFFICIENT_ROWS; CLI exit 2 ?
+LIFECYCLE,L03-HEADER-WRONG-NAMES,header 欄位名稱錯誤（MQ2_raw→MQ2） → 失敗、不產生 Stage,Gateway v2 + CLI inference_30s.main(),RUNTIME (fake serial),PASS,Gateway failed/ADC_INVALID; CLI exit 2 ADC_INVALID
+LIFECYCLE,L04-HEADER-ABSENT,沒有 header → 失敗、不產生 Stage,Gateway v2 + CLI inference_30s.main(),RUNTIME (fake serial),PASS,Gateway failed/SERIAL_HEADER_TIMEOUT; CLI exit 2 SERIAL_HEADER_TIMEOUT
+LIFECYCLE,L05-CLI-FEATURE-ORDER,CLI：feature_columns.json 順序錯誤 → MODEL_FEATURE_MISMATCH,CLI inference_30s.main(),RUNTIME (fake serial),PASS,CLI exit 2 MODEL_FEATURE_MISMATCH=True
+LIFECYCLE,L06-CLI-CHECKSUM,CLI：模型檔 SHA-256 不在清單 → MODEL_NOT_APPROVED,CLI inference_30s.main(),RUNTIME (fake serial),PASS,modified model file → CLI exit 2
+LIFECYCLE,L07-FORMAL-NO-APPROVED-MODEL,正式模式＋出貨核准清單（空）→ Gateway 與 CLI 都回 MODEL_NOT_APPROVED,Gateway v2 + CLI,RUNTIME (fake serial),PASS,Gateway /scan 503/MODEL_NOT_APPROVED; CLI exit 2
+LIFECYCLE,L08-MODE-TRANSITION,工程→正式切換：TEST 紀錄不轉換；正式模式沒有核准模型時拒絕,Gateway v2 + CLI,RUNTIME (fake serial),PASS,"engineering scan TEST → switch to formal: /scan 503/MODEL_NOT_APPROVED; old scan result_kind stays TEST (envelope mode=engineering, backend_mode=formal); FORMAL upload 409; CLI exit 2"
+LIFECYCLE,L09-INFLIGHT-RELOAD,掃描進行中切換設定：結果不會變成 FORMAL、不寫入正式歷史,Gateway v2 (Flask test client),RUNTIME (fake serial),PASS,in-flight scan after reload → failed kind=None formal=0 test=0

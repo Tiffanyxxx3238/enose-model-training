@@ -1,0 +1,632 @@
+$ C:/Users/user/AppData/Local/Temp/s5v/Scripts/python.exe -u C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\step5_offline_acceptance\full_replay.py
+# cwd: C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\step5_offline_acceptance
+
+S99 fruit-days: 99 (unique pineapple-days: 99)
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（09e44b65）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（281b5916）
+[  1/99] 01/20260201 G1 C1 W1 dF=0.0e+00 dP=2.9e-07 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（f1279f2e）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（7707e7ac）
+[  2/99] 01/20260202 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（3f518c5e）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（d31360c5）
+[  3/99] 01/20260203 G2 C2 W2 dF=0.0e+00 dP=1.9e-07 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（baa4edaa）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（4b345303）
+[  4/99] 01/20260204 G1 C1 W1 dF=0.0e+00 dP=1.4e-07 dR1=9.3e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（3ffe7962）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（ee6f7260）
+[  5/99] 01/20260205 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（c5b58876）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（44c24e02）
+[  6/99] 01/20260206 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（425f1d52）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（5d25df83）
+[  7/99] 01/20260207 G2 C2 W2 dF=0.0e+00 dP=9.5e-08 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（e4bb397a）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（bd5211bd）
+[  8/99] 01/20260212 G2 C2 W2 dF=0.0e+00 dP=4.8e-07 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（84ad516d）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（7a09dfa4）
+[  9/99] 02/20260202 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（f3f2e8f3）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（fe57caea）
+[ 10/99] 02/20260203 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（e0c5e14f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（db6e0c3c）
+[ 11/99] 02/20260204 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=4.7e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（c115dee6）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（b40cc260）
+[ 12/99] 02/20260205 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（4fcaed41）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（8304399b）
+[ 13/99] 02/20260206 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（2741094c）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（0f9654e9）
+[ 14/99] 02/20260207 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（e8a554fc）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（33bc7350）
+[ 15/99] 02/20260212 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（ec3a81a1）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（2d82ed3c）
+[ 16/99] 03/20260203 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（8583bb32）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（17a7046c）
+[ 17/99] 03/20260204 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（b036e395）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（bbd20342）
+[ 18/99] 03/20260205 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（e400fe62）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（7c635b17）
+[ 19/99] 03/20260206 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（e41c9a6c）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（6d17cd53）
+[ 20/99] 03/20260207 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（b6f0b87d）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（9f79920f）
+[ 21/99] 03/20260208 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（1db4aa49）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（23ab2ef3）
+[ 22/99] 03/20260209 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（4d9c317e）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（f8e3c3f6）
+[ 23/99] 03/20260210 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（31916b80）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（9d6bc25e）
+[ 24/99] 03/20260211 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（3dce1c01）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（4936ce66）
+[ 25/99] 03/20260212 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（de9ab17c）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（27b5eddb）
+[ 26/99] 03/20260213 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（0d70beea）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（acd1f6a0）
+[ 27/99] 04/20260203 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（ebc0d44b）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（2df9bbf9）
+[ 28/99] 04/20260204 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（191f2c1f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（3908484e）
+[ 29/99] 04/20260205 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d12fe642）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（cc738764）
+[ 30/99] 04/20260207 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d6bd23d6）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（18fa5eec）
+[ 31/99] 04/20260208 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d2810404）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（6417ad9d）
+[ 32/99] 04/20260209 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（225c1bdb）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（bc408a3c）
+[ 33/99] 04/20260210 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（b369ebc1）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（205c5738）
+[ 34/99] 04/20260211 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（801e2909）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（e3cf6cad）
+[ 35/99] 04/20260212 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（121448e9）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（a6779c00）
+[ 36/99] 04/20260213 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（4d4a5359）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（400850fd）
+[ 37/99] 04/20260214 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（255f7f07）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（cc0a6d46）
+[ 38/99] 05/20260202 G1 C1 W1 dF=0.0e+00 dP=4.8e-07 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（53eee58a）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（28fa4230）
+[ 39/99] 05/20260203 G2 C2 W2 dF=0.0e+00 dP=2.4e-07 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（0446e985）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（3a9ea48e）
+[ 40/99] 05/20260204 G2 C2 W2 dF=0.0e+00 dP=1.9e-07 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（058975e8）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（8ad5ea10）
+[ 41/99] 05/20260205 G2 C2 W2 dF=0.0e+00 dP=2.4e-07 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（0ee545dd）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（5ba4e06e）
+[ 42/99] 05/20260206 G1 C1 W1 dF=0.0e+00 dP=2.9e-07 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（5156ced8）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（ae03194a）
+[ 43/99] 05/20260207 G2 C2 W2 dF=0.0e+00 dP=9.5e-08 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（b7ff6555）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（5c9d344d）
+[ 44/99] 05/20260208 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（d6254b64）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（fb5ce8f7）
+[ 45/99] 05/20260209 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（2e8c1e77）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（e9f564ee）
+[ 46/99] 06/20260202 G1 C1 W1 dF=0.0e+00 dP=1.4e-07 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（b127b6cb）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（c970fc7a）
+[ 47/99] 06/20260203 G1 C1 W1 dF=0.0e+00 dP=3.3e-07 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（81b9e76f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（57ee16d7）
+[ 48/99] 06/20260204 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（f73ba83a）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（3c16c7f4）
+[ 49/99] 06/20260205 G0 C0 W0 dF=0.0e+00 dP=9.5e-08 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（facb9bc6）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（e959fe48）
+[ 50/99] 06/20260206 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（20ba867f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（da193b8e）
+[ 51/99] 06/20260209 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（96227996）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（00abfa80）
+[ 52/99] 07/20260203 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（d0cb6f20）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（21f55902）
+[ 53/99] 07/20260305 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=8.3e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（5a40f598）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（6903921e）
+[ 54/99] 07/20260306 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（5a3fb348）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（3a2e2b69）
+[ 55/99] 08/20260203 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（f036c0cf）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（a9d89ea9）
+[ 56/99] 08/20260305 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（4436144f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（38346307）
+[ 57/99] 08/20260306 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（159c1985）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（83663c6e）
+[ 58/99] 09/20260207 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（97c44965）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（c7cc7669）
+[ 59/99] 09/20260212 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（1f22daa1）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（7d1d96e5）
+[ 60/99] 10/20260208 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（590edbf7）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（844ab636）
+[ 61/99] 10/20260209 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（27e149d5）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d7bcf78f）
+[ 62/99] 10/20260210 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（fee5001a）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（15d420d0）
+[ 63/99] 10/20260211 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d9e1ffc2）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（51c6ebf4）
+[ 64/99] 10/20260212 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（b3a64aa5）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（3ef8fce4）
+[ 65/99] 10/20260213 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（93b1bab5）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（c737d147）
+[ 66/99] 10/20260214 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（48de7008）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（d8300965）
+[ 67/99] 10/20260215 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（77a2531d）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：未熟（9ab8bcd4）
+[ 68/99] 11/20260208 G0 C0 W0 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（583d355b）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（370b28b9）
+[ 69/99] 11/20260209 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=8.9e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（af9bd65c）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（61d010a8）
+[ 70/99] 11/20260210 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（c3c82cf2）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（6ed7081b）
+[ 71/99] 11/20260211 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（c9e0121f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（d216e24c）
+[ 72/99] 11/20260212 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（76499dea）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（79d4245c）
+[ 73/99] 11/20260213 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（2d39f3e5）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（c9617886）
+[ 74/99] 11/20260215 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（fd8f8183）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（1070b8f0）
+[ 75/99] 12/20260301 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=5.9e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（ceac5be9）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（0faa896c）
+[ 76/99] 12/20260302 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=9.5e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（ea13b40f）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（5018bc20）
+[ 77/99] 12/20260303 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（08cba311）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（a260755b）
+[ 78/99] 12/20260304 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（f2b11847）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（46b8eac3）
+[ 79/99] 12/20260305 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（d9be861a）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（29c9e937）
+[ 80/99] 12/20260306 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（b2108a85）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（6aa53d22）
+[ 81/99] 12/20260308 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=6.9e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（9a5151f7）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（292fdee0）
+[ 82/99] 12/20260309 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（3428dc47）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（6bb389c2）
+[ 83/99] 12/20260310 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（dab9059e）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（983f4e89）
+[ 84/99] 12/20260311 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（34106571）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（cee77fe8）
+[ 85/99] 12/20260312 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=8.7e-17
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（691849a8）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（d4a6c467）
+[ 86/99] 12/20260313 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（7e8db1b1）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（66130019）
+[ 87/99] 13/20260228 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（55343311）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（b95726b5）
+[ 88/99] 13/20260301 G1 C1 W1 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（69247dee）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（7422b5a2）
+[ 89/99] 13/20260302 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（c298934a）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（a8bebe89）
+[ 90/99] 13/20260303 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（567dc7b3）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（4ce8ae73）
+[ 91/99] 13/20260305 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（7b3ac244）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（c21b3f5e）
+[ 92/99] 13/20260306 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（213b2f1b）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（7ee70e4a）
+[ 93/99] 13/20260307 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（0c61a768）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：成熟（721fce12）
+[ 94/99] 13/20260308 G2 C2 W2 dF=0.0e+00 dP=0.0e+00 dR1=2.2e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（c4aea579）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（a58e2f75）
+[ 95/99] 13/20260309 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（affca757）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（ab41a6e2）
+[ 96/99] 13/20260310 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（409ca1fd）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（bc33a344）
+[ 97/99] 13/20260311 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（5593f796）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（79c71213）
+[ 98/99] 13/20260312 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=1.1e-16
+[Serial] 使用 port：FAKE0
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（2fef1f97）
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：過熟（87bd125a）
+[ 99/99] 13/20260313 G3 C3 W3 dF=0.0e+00 dP=0.0e+00 dR1=5.6e-17
+{
+ "eligible_S99_fruit_days": 99,
+ "unique_pineapples": 13,
+ "replayed_rows": 99,
+ "replay_PASS": 99,
+ "replay_FAIL": 0,
+ "gateway_not_done": [],
+ "max_feat_diff_gateway_vs_cli": 0.0,
+ "max_feat_diff_vs_R1": 2.220446049250313e-16,
+ "max_air_rel_diff_vs_R1": 2.1885299869407607e-16,
+ "max_proba_diff_gateway_vs_cli": 4.7619047618963073e-07,
+ "max_web_proba_diff_vs_cli": 4.2857142857205544e-05,
+ "max_proba_diff_vs_model_on_R1_features": 0.0,
+ "stage_agreement_gateway_cli_web": 99,
+ "excluded_rows_reported": 78,
+ "unified_web_iframe_targets": [
+  "http://192.168.0.152:5000",
+  "http://192.168.0.152:5002"
+ ],
+ "network_attempts": [],
+ "seconds": 137.4,
+ "runtime": {
+  "python": "3.12.7",
+  "sklearn": "1.8.0",
+  "numpy": "2.4.3",
+  "pandas": "3.0.1"
+ },
+ "stage_distribution_gateway": {
+  "0": 10,
+  "1": 41,
+  "2": 38,
+  "3": 10
+ }
+}
