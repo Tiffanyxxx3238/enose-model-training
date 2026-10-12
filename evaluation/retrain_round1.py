@@ -12,11 +12,11 @@ Run:  python -u retrain_round1.py > retrain_round1_out.txt
 """
 import numpy as np
 import pandas as pd
-from scipy.stats import spearmanr
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 
-from eval_common import FEATURES, MODEL, SCAN_ROWS, SENSORS, STEP, WINDOW, load_days, new
+from eval_common import (FEATURES, MODEL, SCAN_ROWS, STEP, WINDOW, extended_features, load_days,
+                         matrix, new, select_features, within_pid_rho)
 
 K = (SCAN_ROWS - WINDOW) // STEP + 1  # 三窗口
 PRIMARY_K = 8                          # 事先指定的主要特徵數；其他 k 只當敏感度參考
@@ -28,42 +28,6 @@ ET_PARAMS = MODEL.get_params()         # 與部署模型相同的 ExtraTrees 參
 # 特徵
 # ─────────────────────────────────────────
 GATEWAY_POOL = None  # gateway 目前算得出、可直接部署的特徵（不含 *_raw_ratio）
-
-
-def extended_features(rows, air):
-    """gateway 特徵 + 訓練 notebook compute_features_one_day 的其他統計量與兩兩比值。"""
-    feat, data = new._build_features(rows, air)
-    feat = {k: v for k, v in feat.items() if not k.endswith("_raw_ratio")}
-    gw_keys = set(feat)
-    mean_norm = {}
-    for s in SENSORS:
-        x = data[s]
-        b = new._base_value(air, s)
-        d = np.diff(x)
-        acc = np.diff(d)
-        n30 = max(1, len(x) // 30)
-        extra = {
-            "mean_norm": np.mean(x) / b,
-            "std_norm": np.std(x) / b,
-            "min_norm": np.min(x) / b,
-            "max_norm": np.max(x) / b,
-            "range_norm": (np.max(x) - np.min(x)) / b,
-            "auc_norm": np.trapz(x) / (len(x) * b),
-            "slope": new._safe_slope(x),
-            "accel_mean": np.mean(acc),
-            "accel_std": np.std(acc),
-            "relative_change": (np.mean(x[-n30:]) - np.mean(x[:n30])) / (np.mean(x[:n30]) + 1e-9),
-            "delta_mean": np.mean(d),
-            "delta_std": np.std(d),
-            "delta_max_abs": np.max(np.abs(d)),
-        }
-        mean_norm[s] = extra["mean_norm"]
-        for k, v in extra.items():
-            feat.setdefault(f"{s}_{k}", float(v))
-    for i, a in enumerate(SENSORS):
-        for b in SENSORS[i + 1:]:
-            feat.setdefault(f"{a}_{b}_ratio", float(mean_norm[a] / (mean_norm[b] + 1e-9)))
-    return feat, gw_keys
 
 
 days = load_days()
@@ -86,40 +50,9 @@ print(f"\nGateway 特徵池 {len(GATEWAY_POOL)} 個；擴充特徵池 {len(EXT_P
 print(f"多數類別基準準確率（全猜 Stage 0）= {np.mean(y == 0):.3f}")
 
 
-def matrix(day_list, cols, k=0):
-    return np.array([[d["feats"][k][c] for c in cols] for d in day_list], dtype=float)
-
-
 # ─────────────────────────────────────────
 # 1. 特徵穩定度分析（描述用）
 # ─────────────────────────────────────────
-def within_pid_rho(day_list, cols):
-    """每顆鳳梨內，特徵與成熟階段的 Spearman 相關；回傳 (平均 rho, 方向一致比例, 有效鳳梨數)。"""
-    out = {}
-    groups = {}
-    for d in day_list:
-        groups.setdefault(d["pid"], []).append(d)
-    for c in cols:
-        rhos = []
-        for ds in groups.values():
-            st = [d["y"] for d in ds]
-            if len(ds) < 3 or len(set(st)) < 2:
-                continue
-            v = [d["feats"][0][c] for d in ds]
-            if np.std(v) == 0:
-                continue
-            r = spearmanr(v, st).correlation
-            if np.isfinite(r):
-                rhos.append(r)
-        if not rhos:
-            out[c] = (0.0, 0.0, 0)
-            continue
-        m = float(np.mean(rhos))
-        cons = float(np.mean(np.sign(rhos) == np.sign(m))) if m != 0 else 0.0
-        out[c] = (m, cons, len(rhos))
-    return out
-
-
 def eta2(v, groups):
     v = np.asarray(v, dtype=float)
     tot = np.sum((v - v.mean()) ** 2)
@@ -167,12 +100,6 @@ print(stab[stab.deploy11 == "Y"].to_string(index=False))
 # ─────────────────────────────────────────
 # 2. 嚴格 LOGO
 # ─────────────────────────────────────────
-def select_features(train_days, pool, k):
-    r = within_pid_rho(train_days, pool)
-    score = {c: abs(r[c][0]) * r[c][1] for c in pool}
-    return sorted(pool, key=lambda c: -score[c])[:k]
-
-
 def fit_predict(train_days, test_days, cols):
     Xtr = matrix(train_days, cols)
     med = np.nanmedian(Xtr, axis=0)                    # 只用訓練組中位數

@@ -8,6 +8,7 @@
 | `eval_common.py` | 共用的資料讀取（gateway 模組、部署模型、原始資料、人工標籤） |
 | `backtest.py` / `backtest_out.txt` | 用歷史資料比較 4 個 gateway 版本，並做 LOGO 重訓評估 |
 | `retrain_round1.py` / `retrain_round1_out.txt` | 第一輪重新訓練：特徵穩定度分析 + 嚴格 LOGO（每折重新選特徵） |
+| `retrain_round2.py` / `retrain_round2_out.txt` | 第二輪：4 類／3 類 × 單窗口／多窗口訓練 |
 
 執行（需要 `enose_model_training/orkspace/data/raw/`、`pineapple_final/` 與 git）：
 
@@ -15,6 +16,7 @@
 python -u audit_reader.py
 python -u backtest.py > backtest_out.txt
 python -u retrain_round1.py > retrain_round1_out.txt
+python -u retrain_round2.py > retrain_round2_out.txt
 ```
 
 ## 資料
@@ -59,3 +61,10 @@ notebook 的 `read_raw_xlsx` 固定把第 2 列當欄名。鳳梨 05、06 的檔
 - 每折特徵選擇只用訓練組 12 顆鳳梨：依「鳳梨內與成熟階段的 Spearman 相關 × 各鳳梨方向一致比例」排序取前 k
 - 主要設定事先指定為 k=8；k=5、11 只作敏感度參考
 - 特徵穩定度分析使用全部資料，只用來描述，不拿來決定最終特徵
+
+## 第二輪（`retrain_round2.py`）
+
+- 三類：Stage 0+1 → 未熟、Stage 2 → 成熟／可食、Stage 3 → 過熟；3 類模型是**重新訓練**，不是把 4 類預測合併（合併結果另列為參考）
+- 多窗口：每天開頭 150 秒內 5 個不重疊 30 秒窗口（起點 0/30/60/90/120 筆），每窗口權重 1/5；只擴增訓練鳳梨，測試仍用開頭三窗口
+- 多數類別基準：4 類 0.317（macroF1 0.120）；3 類 0.584（macroF1 0.246）
+- 101 天的準確率標準誤約 ±0.05，2～5 個百分點的差異不能視為確定改善

@@ -14,6 +14,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.stats import spearmanr
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 
@@ -120,3 +121,79 @@ def load_days():
     med = [m for m in med if m is not None]
     print(f"歷史資料取樣間隔中位數：min={min(med):.3f}s  median={np.median(med):.3f}s  max={max(med):.3f}s")
     return days
+
+
+# ─────────────────────────────────────────
+# 特徵計算與每折特徵選擇（retrain_round1.py、retrain_round2.py 共用）
+# ─────────────────────────────────────────
+def extended_features(rows, air):
+    """gateway 特徵 + 訓練 notebook compute_features_one_day 的其他統計量與兩兩比值。"""
+    feat, data = new._build_features(rows, air)
+    feat = {k: v for k, v in feat.items() if not k.endswith("_raw_ratio")}
+    gw_keys = set(feat)
+    mean_norm = {}
+    for s in SENSORS:
+        x = data[s]
+        b = new._base_value(air, s)
+        d = np.diff(x)
+        acc = np.diff(d)
+        n30 = max(1, len(x) // 30)
+        extra = {
+            "mean_norm": np.mean(x) / b,
+            "std_norm": np.std(x) / b,
+            "min_norm": np.min(x) / b,
+            "max_norm": np.max(x) / b,
+            "range_norm": (np.max(x) - np.min(x)) / b,
+            "auc_norm": np.trapz(x) / (len(x) * b),
+            "slope": new._safe_slope(x),
+            "accel_mean": np.mean(acc),
+            "accel_std": np.std(acc),
+            "relative_change": (np.mean(x[-n30:]) - np.mean(x[:n30])) / (np.mean(x[:n30]) + 1e-9),
+            "delta_mean": np.mean(d),
+            "delta_std": np.std(d),
+            "delta_max_abs": np.max(np.abs(d)),
+        }
+        mean_norm[s] = extra["mean_norm"]
+        for k, v in extra.items():
+            feat.setdefault(f"{s}_{k}", float(v))
+    for i, a in enumerate(SENSORS):
+        for b in SENSORS[i + 1:]:
+            feat.setdefault(f"{a}_{b}_ratio", float(mean_norm[a] / (mean_norm[b] + 1e-9)))
+    return feat, gw_keys
+
+
+def matrix(day_list, cols, k=0):
+    return np.array([[d["feats"][k][c] for c in cols] for d in day_list], dtype=float)
+
+
+def within_pid_rho(day_list, cols, label=lambda d: d["y"]):
+    """每顆鳳梨內，特徵與成熟階段的 Spearman 相關；回傳 (平均 rho, 方向一致比例, 有效鳳梨數)。"""
+    out = {}
+    groups = {}
+    for d in day_list:
+        groups.setdefault(d["pid"], []).append(d)
+    for c in cols:
+        rhos = []
+        for ds in groups.values():
+            st = [label(d) for d in ds]
+            if len(ds) < 3 or len(set(st)) < 2:
+                continue
+            v = [d["feats"][0][c] for d in ds]
+            if np.std(v) == 0:
+                continue
+            r = spearmanr(v, st).correlation
+            if np.isfinite(r):
+                rhos.append(r)
+        if not rhos:
+            out[c] = (0.0, 0.0, 0)
+            continue
+        m = float(np.mean(rhos))
+        cons = float(np.mean(np.sign(rhos) == np.sign(m))) if m != 0 else 0.0
+        out[c] = (m, cons, len(rhos))
+    return out
+
+
+def select_features(train_days, pool, k, label=lambda d: d["y"]):
+    r = within_pid_rho(train_days, pool, label)
+    score = {c: abs(r[c][0]) * r[c][1] for c in pool}
+    return sorted(pool, key=lambda c: -score[c])[:k]
