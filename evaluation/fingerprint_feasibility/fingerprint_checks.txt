@@ -1,0 +1,16 @@
+[PASS] 1. 原始專案工作目錄未修改（git status 與 HEAD 前後相同） (['c:\\Users\\user\\electronic-nose-pineapple-ripeness-assessment', 'c:\\Users\\user\\enose-gateway-fix'])
+[PASS] 2. 新工作區獨立存在 (C:/Users/user/enose-fingerprint-study)
+[PASS] 3. 分支互不干擾 (本工作區 analysis/odor-fingerprint-feasibility)
+[PASS] 4. 原始資料與部署檔 SHA-256 不變（並與研究 worktree 的同名原始檔逐位元相同） (444 檔；changed=0)
+[PASS] 5. 101 天、13 顆、32/27/27/15 
+[PASS] 6. AIR／Fruit 配對有實際來源 (data_label_audit_report.xlsx / all_key_audit 的 fruit_file、air_file)
+[PASS] 7. 兩筆已知異常被標記 
+[PASS] 8. 三種指紋使用相同五感測器與相同窗口 (r 由同一組 S、B 計算；F1、F2 由 r 衍生)
+[PASS] 9. L2 正規化未放大零／低訊號向量 (LOW_SIGNAL 5 天的 F2 皆為 NaN)
+[PASS] 10. 相似度未將重複日期當成獨立鳳梨 (單位為鳳梨 × Stage；bootstrap 以 pineapple_id 重抽)
+[PASS] 11. Group 與 Stage 混雜已報告 (覆蓋表、R² 混雜表、可識別性說明)
+[PASS] 12. 沒有訓練任何分類模型 (本程式未 import 或呼叫任何分類器)
+[PASS] 13. 沒有特徵／模型／參數搜尋 (門檻與設計預先登記於 fingerprint_preregistration.json)
+[PASS] 14. 未修改 Gateway、Pi、App、正式部署模型 (App 不在本 sparse checkout)
+[PASS] 15. 沒有 push、merge 或部署 (本程式不執行任何 git 寫入操作)
+[PASS] 16. 未把描述性模式宣稱為分類效能 (報告與圖表均標示描述性)

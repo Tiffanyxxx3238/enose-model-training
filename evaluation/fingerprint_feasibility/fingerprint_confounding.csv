@@ -1,0 +1,5 @@
+﻿representation,n_days,n_pineapples,R2_stage,R2_group,R2_month,R2_pineapple_id,R2_LOW_SIGNAL,R2_stage_within_pineapple,max_abs_spearman_component_vs_logAIR
+F0,99,13,0.062,0.077,0.015,0.185,0.002,0.078,0.306
+F1,99,13,0.028,0.098,0.017,0.185,0.0,0.034,0.249
+F2,96,13,0.064,0.084,0.016,0.251,N/A,0.09,0.344
+F3,95,13,0.057,0.094,0.031,0.246,0.008,0.033,0.364

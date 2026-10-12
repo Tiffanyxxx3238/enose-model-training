@@ -1,0 +1,49 @@
+﻿metric,value,sensor
+n_days_analyzed,99.0,ALL
+median_r_norm,0.1214,ALL
+median_air_null_q95_norm,0.0602,ALL
+median_air_day_to_day_norm,0.4311,ALL
+P(norm > null q95) = 非 LOW_SIGNAL 比例,0.97,ALL
+P(norm > day-to-day AIR change),0.081,ALL
+LOW_SIGNAL_centered 比例,0.04,ALL
+median frac energy removed by centering,0.517,ALL
+median_abs_diff_ADC,4.7667,MQ2
+median_abs_diff_ADC,6.2333,MQ3
+median_abs_diff_ADC,5.2333,MQ9
+median_abs_diff_ADC,3.9667,MQ135
+median_abs_diff_ADC,2.6667,TGS2602
+median_air_sd30_ADC,0.4661,MQ2
+median_air_sd30_ADC,0.4068,MQ3
+median_air_sd30_ADC,0.4302,MQ9
+median_air_sd30_ADC,0.4068,MQ135
+median_air_sd30_ADC,0.4498,TGS2602
+median_air_windowmean_sd_ADC,0.7044,MQ2
+median_air_windowmean_sd_ADC,1.0869,MQ3
+median_air_windowmean_sd_ADC,0.9883,MQ9
+median_air_windowmean_sd_ADC,0.8744,MQ135
+median_air_windowmean_sd_ADC,0.3808,TGS2602
+median_RNP,5.8519,MQ2
+median_RNP,4.7756,MQ3
+median_RNP,4.7505,MQ9
+median_RNP,4.8496,MQ135
+median_RNP,4.3498,TGS2602
+P(RNP>2),0.8889,MQ2
+P(RNP>2),0.8788,MQ3
+P(RNP>2),0.8485,MQ9
+P(RNP>2),0.9192,MQ135
+P(RNP>2),0.8586,TGS2602
+median_rel_response,-0.0185,MQ2
+median_rel_response,-0.0317,MQ3
+median_rel_response,-0.0348,MQ9
+median_rel_response,-0.0264,MQ135
+median_rel_response,-0.0032,TGS2602
+median_abs_day_to_day_rel,0.0757,MQ2
+median_abs_day_to_day_rel,0.1085,MQ3
+median_abs_day_to_day_rel,0.098,MQ9
+median_abs_day_to_day_rel,0.1032,MQ135
+median_abs_day_to_day_rel,0.0626,TGS2602
+P(|r_i| > |day-to-day_i|),0.3023,MQ2
+P(|r_i| > |day-to-day_i|),0.2442,MQ3
+P(|r_i| > |day-to-day_i|),0.3256,MQ9
+P(|r_i| > |day-to-day_i|),0.2209,MQ135
+P(|r_i| > |day-to-day_i|),0.1977,TGS2602
