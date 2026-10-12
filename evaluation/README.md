@@ -5,13 +5,16 @@
 | 檔案 | 內容 |
 |---|---|
 | `audit_reader.py` / `audit_reader.csv` | 逐檔比較訓練 notebook 的 `read_raw_xlsx` 與正確讀法，找出讀錯的原始檔 |
+| `eval_common.py` | 共用的資料讀取（gateway 模組、部署模型、原始資料、人工標籤） |
 | `backtest.py` / `backtest_out.txt` | 用歷史資料比較 4 個 gateway 版本，並做 LOGO 重訓評估 |
+| `retrain_round1.py` / `retrain_round1_out.txt` | 第一輪重新訓練：特徵穩定度分析 + 嚴格 LOGO（每折重新選特徵） |
 
 執行（需要 `enose_model_training/orkspace/data/raw/`、`pineapple_final/` 與 git）：
 
 ```bash
 python -u audit_reader.py
 python -u backtest.py > backtest_out.txt
+python -u retrain_round1.py > retrain_round1_out.txt
 ```
 
 ## 資料
@@ -48,3 +51,11 @@ notebook 的 `read_raw_xlsx` 固定把第 2 列當欄名。鳳梨 05、06 的檔
 4. **LOGO 使用固定的 11 個部署特徵。** 這組特徵是當初用全部資料選出的，沒有在每一折內重新選擇，所以 LOGO 結果若有偏差，應該是**偏樂觀**。補值只用訓練組中位數（目前資料實際上沒有缺值）。
 5. **LOGO 只用 101 天人工標籤**，訓練資料比原 notebook（含偽標籤）少，與 notebook 的 73% / 92.5% 不是同條件比較。
 6. 歷史資料是每天一次的連續記錄，不是同一顆鳳梨反覆取放的實驗；能評估窗口位置敏感度，**不能證明感測器恢復問題已解決**。
+
+## 第一輪重新訓練（`retrain_round1.py`）
+
+- 只用 101 天人工標籤；ExtraTrees 參數與部署模型相同；**不匯出模型，不修改部署包**
+- 特徵池：gateway 池（15 個，可直接部署）、擴充池（76 個，notebook 的各感測器統計量 + 兩兩比值，部署需擴充 gateway）
+- 每折特徵選擇只用訓練組 12 顆鳳梨：依「鳳梨內與成熟階段的 Spearman 相關 × 各鳳梨方向一致比例」排序取前 k
+- 主要設定事先指定為 k=8；k=5、11 只作敏感度參考
+- 特徵穩定度分析使用全部資料，只用來描述，不拿來決定最終特徵
