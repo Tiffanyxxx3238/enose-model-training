@@ -1,0 +1,20 @@
+[PASS] 5.1 101 天 (n=101)
+[PASS] 5.1 13 顆鳳梨 (n=13)
+[PASS] 5.1 (pineapple_id, date) 唯一 (dup=0)
+[PASS] 5.1 Stage 32/27/27/15 ([32, 27, 27, 15])
+[PASS] 5.2 來源：4 類／FIXED11／多窗口訓練／三窗口測試 (feature_setting、train_mode、test_mode、model_config 欄位；由 round3_diagnosis.py 呼叫 retrain_round2.run(4,'multi','FIXED11') 產生，round4_analysis.py 已逐日重新訓練並重現相同預測)
+[PASS] 5.2 LOGO：每顆鳳梨一折、訓練名單不含測試鳳梨 (13 折；leak rows=0)
+[PASS] 5.3 機率有限、位於 [0,1] 
+[PASS] 5.3 四類機率總和 ≈ 1（CSV 四捨五入至 4 位） (min=0.9999, max=1.0001)
+[PASS] 5.3 類別順序 0..3 且 argmax = pred_stage (最大值並列 0 列)
+[PASS] 5.4 重現第二輪混淆矩陣與指標 (acc=0.426, F1=0.410, R2=0.296, R3=0.267)
+[NOT AVAILABLE] 5.5 三個個別窗口的預測與機率 (依指示不重新訓練 LOGO 來取得)
+[PASS] 7. Error AUROC 方向：risk score 越高越可能錯、is_error=1 為正類 (1−maxprob、1−margin、normalized_entropy)
+[PASS] 8. Entropy 對零機率處理（0·log0 = 0，無 NaN） (含 0 機率的列 0)
+[PASS] 9. Cluster bootstrap 以 pineapple_id 抽樣（13 顆、有放回、保留整顆所有日期） (seed=20261012, B=2000)
+[PASS] 10. 單一結果類別的 AUROC 標記 N/A，不填 0.5 
+[PASS] 11. 群組與 Stage 分析完整、缺失類別有註記 (群組 ['A', 'B', 'C', 'D']；群組 C 只有 S0、群組 D 只有 S1/S3 已記錄於 stage_coverage)
+[NOT AVAILABLE] 12. Window Disagreement 未取得原始窗口資料時不虛構 (未計算、未推測)
+[PASS] 13. 未選擇或最佳化任何拒判門檻 (0.7/0.8/0.9 為事先固定的描述性切點，未依結果調整)
+[PASS] 14. 未開始 Phase 2 (無 risk–coverage、拒判、校準模型或新模型訓練)
+[PASS] 15. 原始資料、標籤、gateway、部署模型、既有分析程式未修改 (426 檔 SHA-256 前後一致；git status 除本輪新增外無變更=True；App 不在此 sparse checkout）

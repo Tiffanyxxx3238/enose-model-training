@@ -11,6 +11,7 @@
 | `retrain_round2.py` / `retrain_round2_out.txt` | 第二輪：4 類／3 類 × 單窗口／多窗口訓練 |
 | `round3_diagnosis.py` / `round3_diagnosis.md`（輸出：`round3_*.csv/png`、`round3_results/`） | 第三輪：標籤一致性、動態訊號、Stage 2 誤判歸因 |
 | `round4_analysis.py` / `round4_report.md`（輸出：`round4_results/`） | 第四輪：資料品質、訊號表示、群組／月份混雜、探索性 PCA 校正、溫濕度、訊號對空氣波動比 |
+| `reliability_phase1.py` / `reliability_phase1_report.md`（輸出：`reliability_phase1_results/`） | 可靠度研究 Phase 1：預測信心能否辨識判錯（只讀既有 LOGO 預測，不訓練模型） |
 
 執行（需要 `enose_model_training/orkspace/data/raw/`、`pineapple_final/` 與 git）：
 
@@ -21,6 +22,7 @@ python -u retrain_round1.py > retrain_round1_out.txt
 python -u retrain_round2.py > retrain_round2_out.txt
 python -u round3_diagnosis.py > round3_results/round3_run_log.txt
 python -u round4_analysis.py > round4_results/round4_run_log.txt   # 約 15～20 分鐘（含 10 個亂數種子）
+python -u reliability_phase1.py > reliability_phase1_results/phase1_run_log.txt
 ```
 
 ## 資料
@@ -85,3 +87,11 @@ notebook 的 `read_raw_xlsx` 固定把第 2 列當欄名。鳳梨 05、06 的檔
 - 事後診斷（非預先指定，只用於解讀）：只計群組 A＋B／C＋D、留出整個群組、亂數種子 0～9、鳳梨−空氣差距 vs 空氣漂移
 - 4D 是 PCA-based exploratory correction，**不是** CPCA 或 Direct Standardization（缺少參考氣體與轉移樣本，見報告 E 節）
 - 主要結論：跨鳳梨 LOGO 下看似的改善主要來自群組捷徑；留出整個群組時所有方法 ≤ 0.34
+
+## 可靠度研究 Phase 1（`reliability_phase1.py`，報告 `reliability_phase1_report.md`）
+
+- 輸入：`round3_logo_predictions.csv` 的 FIXED11 列（4 類／多窗口訓練／三窗口測試的 LOGO out-of-fold 預測）
+- 指標：1−最高機率、1−Top-2 差距、正規化熵的 Error AUROC；以 pineapple_id 為 cluster 的 bootstrap（2000 次）；群組、Stage、逐顆鳳梨分析
+- Window Disagreement：NOT AVAILABLE（只有三窗口平均機率）
+- 決定：**STOP**（三種 AUROC 0.50～0.59，CI 都包含 0.5；最高機率 ≥0.70 的 8 天中 6 天判錯；Stage 2 方向相反）
+- 未執行 Phase 2：沒有選門檻、沒有拒判、沒有訓練新模型

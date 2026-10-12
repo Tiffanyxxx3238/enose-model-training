@@ -1,0 +1,5 @@
+﻿true_stage,n_pineapples,n_days,correct,errors,accuracy,error_rate,mean_max_prob,median_max_prob,median_top2_margin,median_norm_entropy,median_maxprob_correct,median_maxprob_error,hc_errors_ge0.70,hc_errors_ge0.80,hc_errors_ge0.90,stage_coverage,auroc[1 - max_probability],auroc[1 - top2_margin],auroc[normalized_entropy],auroc_note,recall,pred_distribution
+S0,9,32,17,15,0.531,0.469,0.528,0.51,0.182,0.782,0.521,0.488,2,1,0,S0:32,0.584,0.678,0.475,,0.531,→S0:17 →S1:6 →S2:8 →S3:1
+S1,11,27,14,13,0.519,0.481,0.499,0.468,0.149,0.822,0.51,0.445,1,1,0,S1:27,0.692,0.67,0.659,,0.519,→S0:5 →S1:14 →S2:7 →S3:1
+S2,7,27,8,19,0.296,0.704,0.51,0.516,0.227,0.796,0.457,0.541,3,0,0,S2:27,0.257,0.296,0.27,,0.296,→S0:9 →S1:8 →S2:8 →S3:2
+S3,5,15,4,11,0.267,0.733,0.471,0.443,0.179,0.872,0.525,0.428,0,0,0,S3:15,0.818,0.818,0.545,,0.267,→S0:3 →S1:2 →S2:6 →S3:4
