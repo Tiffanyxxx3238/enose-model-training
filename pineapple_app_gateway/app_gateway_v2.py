@@ -13,6 +13,7 @@ API:
 import glob
 import hashlib
 import json
+import os
 import pickle
 import threading
 import time
@@ -67,6 +68,10 @@ POSTPROCESS_MODE = "raw"
 # 實際取樣間隔中位數超出此範圍時，窗口就不等於訓練時的 30 秒
 EXPECTED_INTERVAL_SEC = 1.0
 INTERVAL_TOLERANCE_SEC = 0.2
+
+# 部署模型的 SHA-256（pineapple_final/deploy_student.pkl，ET 30 秒、無日期特徵）
+# 換模型時必須同步更新，或用環境變數 EXPECTED_MODEL_SHA256 覆寫；設為空字串則不檢查
+EXPECTED_MODEL_SHA256 = "a57dbbbf3a3dd7f27d59c3006d8319faf7e16431d6c06eaa3a55ec84d26f16a1"
 
 # 開始取樣時用來描述感測器初始狀態的筆數（只記錄，不做判斷）
 ONSET_ROWS = 5
@@ -160,6 +165,29 @@ def _load_model():
     else:
         _meta = {}
 
+    expected_sha = os.environ.get("EXPECTED_MODEL_SHA256", EXPECTED_MODEL_SHA256)
+    if expected_sha and _model_sha256 != expected_sha:
+        raise ValueError(
+            f"模型 SHA-256 不符：實際 {_model_sha256}，預期 {expected_sha}。"
+            "若確定要換模型，請更新 EXPECTED_MODEL_SHA256"
+        )
+
+    # 特徵名稱與順序必須完全一致（只比數量不夠）
+    meta_cols = _meta.get("feature_columns")
+    if meta_cols is not None and list(meta_cols) != list(_features):
+        raise ValueError("feature_columns.json 與 deploy_meta.json 的特徵名稱或順序不一致")
+
+    model_cols = getattr(_model, "feature_names_in_", None)
+    if model_cols is not None and list(model_cols) != list(_features):
+        raise ValueError("模型記錄的特徵名稱或順序與 feature_columns.json 不一致")
+
+    # 啟動時就確認 gateway 算得出所有特徵，而不是等到掃描才失敗
+    probe = [{s: 100.0 + i for s in GAS_SENSORS} for i in range(WINDOW)]
+    probe_feat, _ = _build_features(probe, {s: 100.0 for s in GAS_SENSORS})
+    missing = [f for f in _features if f not in probe_feat]
+    if missing:
+        raise ValueError(f"FEATURE_MISMATCH：gateway 無法計算模型需要的特徵 {missing}")
+
     print(f"[Model] 載入完成，特徵數：{len(_features)}，SHA-256：{_model_sha256}")
 
 
@@ -198,15 +226,38 @@ def _read_arduino_row(row):
     return parsed
 
 
+def _list_serial_candidates():
+    return sorted(glob.glob("/dev/ttyACM*")) + sorted(glob.glob("/dev/ttyUSB*"))
+
+
 def _get_arduino_port():
-    return "COM5"
+    # 1. 環境變數指定（例如 ARDUINO_PORT=/dev/ttyACM0 或 Windows 的 COM5）
+    port = os.environ.get("ARDUINO_PORT")
+    if port:
+        return port
+
+    # 2. Raspberry Pi / Linux：自動偵測
+    candidates = _list_serial_candidates()
+    if candidates:
+        if len(candidates) > 1:
+            print(f"[Serial] 偵測到多個裝置 {candidates}，使用 {candidates[0]}；可用 ARDUINO_PORT 指定")
+        return candidates[0]
+
+    # 3. Windows 測試環境沿用原本的 COM5
+    if os.name == "nt":
+        return "COM5"
+
+    return None
 
 
 def _open_serial_and_wait_header():
     port = _get_arduino_port()
 
     if not port:
-        raise RuntimeError("找不到 Arduino，請確認 USB 連接")
+        raise RuntimeError(
+            "找不到 Arduino：/dev/ttyACM*、/dev/ttyUSB* 都沒有裝置，"
+            "請確認 USB 連接，或用環境變數 ARDUINO_PORT 指定序列埠"
+        )
 
     print(f"[Serial] 使用 port：{port}")
 
@@ -735,6 +786,7 @@ def _run_inference(warmup_sec: int, scan_id: str):
         #   ok                                  → measurement_valid = True
         #   unstable（窗口結果不一致）            → 回傳結果，但 measurement_valid = False
         #   unknown（無法讀到 timestamp_ms）      → 回傳結果，但 measurement_valid = False
+        #   timestamp_incomplete（部分列缺時間戳）→ 回傳結果，但 measurement_valid = False
         #   timestamp_reset / interval_abnormal → 資料不符合模型前提，以 error 結束（見下方）
         sampling_failed = sampling["status"] in ("timestamp_reset", "interval_abnormal")
         if sampling_failed:
@@ -742,8 +794,13 @@ def _run_inference(warmup_sec: int, scan_id: str):
         elif not stable:
             quality_status = "unstable"
             display_text = f"{display_text}（量測不穩定，建議重測）"
+        elif sampling["status"] != "ok":
+            quality_status = "unknown"
+        elif sampling["missing_timestamp_ratio"]:
+            # 有缺時間戳的列時，間隔是跳過缺值算的，不能宣稱取樣時間已全部驗證
+            quality_status = "timestamp_incomplete"
         else:
-            quality_status = "ok" if sampling["status"] == "ok" else "unknown"
+            quality_status = "ok"
         measurement_valid = quality_status == "ok"
 
         _, data = _build_features(rows, air)
@@ -973,7 +1030,7 @@ def health():
         except Exception:
             air_base_preview = None
 
-    ports = sorted(glob.glob("/dev/ttyACM*")) + sorted(glob.glob("/dev/ttyUSB*"))
+    ports = _list_serial_candidates()
 
     return jsonify({
         "status": "ok",
@@ -987,6 +1044,7 @@ def health():
         "postprocess_mode": POSTPROCESS_MODE,
         "feature_columns_exists": FEATURES_PATH.exists(),
         "arduino_ports": ports,
+        "arduino_port_selected": _get_arduino_port(),
         "pineapple_dir": str(PINEAPPLE_DIR),
         "time": datetime.utcnow().isoformat() + "Z",
     })
