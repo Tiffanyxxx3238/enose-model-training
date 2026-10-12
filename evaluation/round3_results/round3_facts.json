@@ -1,0 +1,26 @@
+{
+  "n_labels_total": 115,
+  "n_regressions": 1,
+  "n_jumps": 2,
+  "stage_pids": {
+    "0": 9,
+    "1": 11,
+    "2": 7,
+    "3": 5
+  },
+  "main_acc": 0.426,
+  "main_macroF1": 0.41,
+  "main_recall": [
+    0.531,
+    0.519,
+    0.296,
+    0.267
+  ],
+  "stage2_counts": [
+    9,
+    8,
+    8,
+    2
+  ],
+  "checks_failed": []
+}

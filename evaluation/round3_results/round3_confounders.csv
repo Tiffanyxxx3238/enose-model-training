@@ -1,0 +1,9 @@
+﻿variable,spearman_pooled_vs_stage,within_pid_mean_rho,sign_consistency,n_pid
+days_since_first,0.734,0.87,1.0,10
+temp_c,0.227,0.207,0.7,10
+humidity_pct,0.241,0.289,0.7,10
+MQ2_air_baseline_raw,0.201,0.645,0.9,10
+MQ3_air_baseline_raw,0.52,0.247,0.6,10
+MQ9_air_baseline_raw,0.058,0.401,0.7,10
+MQ135_air_baseline_raw,0.052,0.355,0.7,10
+TGS2602_air_baseline_raw,0.308,0.484,0.8,10

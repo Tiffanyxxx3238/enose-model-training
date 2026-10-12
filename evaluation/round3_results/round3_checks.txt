@@ -1,0 +1,12 @@
+[PASS] 1. 101 天、13 顆鳳梨 (days=101, pids=13)
+[PASS] 2. 標籤分布 32/27/27/15 ([32, 27, 27, 15])
+[PASS] 3. FIXED11 每個測試日期只出現一次 (rows=101, dup=0)
+[PASS] 4. FIXED11 每折訓練組完全排除測試鳳梨 (leak rows=0)
+[PASS] 3. SEL-GW8 每個測試日期只出現一次 (rows=101, dup=0)
+[PASS] 4. SEL-GW8 每折訓練組完全排除測試鳳梨 (leak rows=0)
+[PASS] 5. 主要基準重現第二輪混淆矩陣 (acc=0.426, macroF1=0.410)
+[PASS] 6. Stage 2 的 27 天：9/8/8/2 ([9, 8, 8, 2])
+[PASS] 7. 原始 XLSX 與人工標籤未修改 (檢查 349 檔 SHA-256；其中原始 xlsx 332 檔；git status 乾淨=True)
+[PASS] 8. Gateway 與部署模型未修改 
+[PASS] 9. 圖表皆由 CSV 重新繪製 (plot_* 函式只讀 CSV)
+[PASS] 10. 描述性分析未回饋到 LOGO 模型 (LOGO 直接呼叫 retrain_round2.run，參數與第二輪相同；本檔的描述性結果只在 LOGO 之後計算與輸出)

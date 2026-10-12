@@ -48,8 +48,10 @@ def run(task, train_mode, feat_mode):
     cmap = TASKS[task]["map"]
     label = lambda d: cmap[d["y"]]  # noqa: E731
     out = {"y": [], "single": [], "three": [], "pid": [], "flip": []}
+    # 逐日診斷資料（第三輪使用；不影響本檔輸出）
+    out.update({"date": [], "fold": [], "proba_three": [], "proba_all": [], "cols": [], "train_pids": []})
     picked = {}
-    for pid in sorted(set(pids)):
+    for fold_id, pid in enumerate(sorted(set(pids))):
         tr = [d for d in days if d["pid"] != pid]
         te = [d for d in days if d["pid"] == pid]
         cols = list(FEATURES) if feat_mode == "FIXED11" else select_features(tr, GATEWAY_POOL, SEL_K, label)
@@ -76,6 +78,12 @@ def run(task, train_mode, feat_mode):
             out["pid"].append(pid)
             seq = [int(np.argmax(P[i:i + K].mean(axis=0))) for i in range(len(P) - K + 1)]
             out["flip"].append(np.mean([a != b for a, b in zip(seq, seq[1:])]))
+            out["date"].append(d["date"])
+            out["fold"].append(fold_id)
+            out["proba_three"].append(P[:K].mean(axis=0))
+            out["proba_all"].append(P)
+            out["cols"].append(list(cols))
+            out["train_pids"].append(sorted({t["pid"] for t in tr}))
     return out, picked
 
 
@@ -104,70 +112,71 @@ def baseline(task):
     return float(np.mean(yt == maj)), float(np.mean(F)), TASKS[task]["names"][maj]
 
 
-print("\n多數類別基準（全部猜最多的那一類）：")
-for t in (4, 3):
-    acc, f1, name = baseline(t)
-    print(f"  {t} 類：全猜「{name}」 accuracy={acc:.3f}  macroF1={f1:.3f}")
+if __name__ == "__main__":
+    print("\n多數類別基準（全部猜最多的那一類）：")
+    for t in (4, 3):
+        acc, f1, name = baseline(t)
+        print(f"  {t} 類：全猜「{name}」 accuracy={acc:.3f}  macroF1={f1:.3f}")
 
-EXPS = [("A", 4, "single"), ("B", 3, "single"), ("C", 4, "multi"), ("D", 3, "multi")]
-summary = []
-collapsed_ref = []
+    EXPS = [("A", 4, "single"), ("B", 3, "single"), ("C", 4, "multi"), ("D", 3, "multi")]
+    summary = []
+    collapsed_ref = []
 
-for feat_mode in ("FIXED11", "SEL-GW8"):
-    print("\n" + "=" * 76)
-    print(f"特徵：{feat_mode}" + ("（原部署 11 特徵，主要比較）" if feat_mode == "FIXED11" else "（每折從 gateway 池重選 8 個）"))
-    print("=" * 76)
-    for exp, task, train_mode in EXPS:
-        out, picked = run(task, train_mode, feat_mode)
-        yt = np.array(out["y"])
-        names = TASKS[task]["names"]
-        for mode in ("single", "three"):
-            yp = np.array(out[mode])
+    for feat_mode in ("FIXED11", "SEL-GW8"):
+        print("\n" + "=" * 76)
+        print(f"特徵：{feat_mode}" + ("（原部署 11 特徵，主要比較）" if feat_mode == "FIXED11" else "（每折從 gateway 池重選 8 個）"))
+        print("=" * 76)
+        for exp, task, train_mode in EXPS:
+            out, picked = run(task, train_mode, feat_mode)
+            yt = np.array(out["y"])
+            names = TASKS[task]["names"]
+            for mode in ("single", "three"):
+                yp = np.array(out[mode])
+                cm, R, F = metrics(task, yt, yp)
+                row = {"特徵": feat_mode, "實驗": exp, "類別": task,
+                       "訓練": "單窗口" if train_mode == "single" else "多窗口",
+                       "測試": "單" if mode == "single" else "三",
+                       "acc": round(float(np.mean(yt == yp)), 3), "macroF1": round(float(np.mean(F)), 3)}
+                row.update({f"R_{n}": round(float(r), 2) for n, r in zip(names, R)})
+                row.update(critical(task, cm))
+                if mode == "three":
+                    row["相鄰翻轉率"] = round(float(np.mean(out["flip"])), 3)
+                summary.append(row)
+
+            yp = np.array(out["three"])
             cm, R, F = metrics(task, yt, yp)
-            row = {"特徵": feat_mode, "實驗": exp, "類別": task,
-                   "訓練": "單窗口" if train_mode == "single" else "多窗口",
-                   "測試": "單" if mode == "single" else "三",
-                   "acc": round(float(np.mean(yt == yp)), 3), "macroF1": round(float(np.mean(F)), 3)}
-            row.update({f"R_{n}": round(float(r), 2) for n, r in zip(names, R)})
-            row.update(critical(task, cm))
-            if mode == "three":
-                row["相鄰翻轉率"] = round(float(np.mean(out["flip"])), 3)
-            summary.append(row)
+            print(f"\n---- {exp}：{task} 類 / {'單窗口' if train_mode == 'single' else '多窗口'}訓練 / 測試三窗口"
+                  f"  acc={np.mean(yt == yp):.3f} macroF1={np.mean(F):.3f}")
+            print(pd.DataFrame(cm, index=[f"真:{n}" for n in names], columns=[f"預:{n}" for n in names]).to_string())
+            per_pid = {int(p): round(float(np.mean([a == b for a, b, q in zip(yt, yp, out["pid"]) if q == p])), 2)
+                       for p in sorted(set(out["pid"]))}
+            print("各鳳梨準確率：", per_pid)
+            if feat_mode != "FIXED11":
+                print("被選到的特徵（13 折次數）：", ", ".join(f"{c}×{n}" for c, n in sorted(picked.items(), key=lambda x: -x[1])))
 
-        yp = np.array(out["three"])
-        cm, R, F = metrics(task, yt, yp)
-        print(f"\n---- {exp}：{task} 類 / {'單窗口' if train_mode == 'single' else '多窗口'}訓練 / 測試三窗口"
-              f"  acc={np.mean(yt == yp):.3f} macroF1={np.mean(F):.3f}")
-        print(pd.DataFrame(cm, index=[f"真:{n}" for n in names], columns=[f"預:{n}" for n in names]).to_string())
-        per_pid = {int(p): round(float(np.mean([a == b for a, b, q in zip(yt, yp, out["pid"]) if q == p])), 2)
-                   for p in sorted(set(out["pid"]))}
-        print("各鳳梨準確率：", per_pid)
-        if feat_mode != "FIXED11":
-            print("被選到的特徵（13 折次數）：", ", ".join(f"{c}×{n}" for c, n in sorted(picked.items(), key=lambda x: -x[1])))
+            # 參考：4 類模型的預測直接合併成 3 類（不是 3 類模型，只用來判斷「重訓 3 類」是否真的有幫助）
+            if task == 4:
+                cmap3 = TASKS[3]["map"]
+                yt3 = np.array([cmap3[v] for v in yt])
+                yp3 = np.array([cmap3[v] for v in yp])
+                _, R3, F3 = metrics(3, yt3, yp3)
+                collapsed_ref.append({"特徵": feat_mode, "來源": f"{exp}（4 類模型合併）",
+                                      "acc": round(float(np.mean(yt3 == yp3)), 3), "macroF1": round(float(np.mean(F3)), 3),
+                                      **{f"R_{n}": round(float(r), 2) for n, r in zip(TASKS[3]["names"], R3)}})
 
-        # 參考：4 類模型的預測直接合併成 3 類（不是 3 類模型，只用來判斷「重訓 3 類」是否真的有幫助）
-        if task == 4:
-            cmap3 = TASKS[3]["map"]
-            yt3 = np.array([cmap3[v] for v in yt])
-            yp3 = np.array([cmap3[v] for v in yp])
-            _, R3, F3 = metrics(3, yt3, yp3)
-            collapsed_ref.append({"特徵": feat_mode, "來源": f"{exp}（4 類模型合併）",
-                                  "acc": round(float(np.mean(yt3 == yp3)), 3), "macroF1": round(float(np.mean(F3)), 3),
-                                  **{f"R_{n}": round(float(r), 2) for n, r in zip(TASKS[3]["names"], R3)}})
-
-pd.set_option("display.width", 250)
-df = pd.DataFrame(summary)
-print("\n" + "=" * 76)
-print("總表：4 類（LOGO 13 折）")
-print("=" * 76)
-cols4 = ["特徵", "實驗", "訓練", "測試", "acc", "macroF1", "R_未熟", "R_初熟", "R_成熟", "R_過熟",
-         "成熟→未熟/初熟", "過熟→成熟", "過熟→未熟/初熟", "相鄰翻轉率"]
-print(df[df["類別"] == 4][cols4].fillna("").to_string(index=False))
-print("\n" + "=" * 76)
-print("總表：3 類（LOGO 13 折）")
-print("=" * 76)
-cols3 = ["特徵", "實驗", "訓練", "測試", "acc", "macroF1", "R_未熟(0+1)", "R_成熟/可食(2)", "R_過熟(3)",
-         "成熟→未熟", "過熟→成熟", "過熟→未熟", "相鄰翻轉率"]
-print(df[df["類別"] == 3][cols3].fillna("").to_string(index=False))
-print("\n參考：4 類模型預測（測試三窗口）直接合併成 3 類——不是 3 類模型，只用來對照重訓 3 類是否有幫助")
-print(pd.DataFrame(collapsed_ref).to_string(index=False))
+    pd.set_option("display.width", 250)
+    df = pd.DataFrame(summary)
+    print("\n" + "=" * 76)
+    print("總表：4 類（LOGO 13 折）")
+    print("=" * 76)
+    cols4 = ["特徵", "實驗", "訓練", "測試", "acc", "macroF1", "R_未熟", "R_初熟", "R_成熟", "R_過熟",
+             "成熟→未熟/初熟", "過熟→成熟", "過熟→未熟/初熟", "相鄰翻轉率"]
+    print(df[df["類別"] == 4][cols4].fillna("").to_string(index=False))
+    print("\n" + "=" * 76)
+    print("總表：3 類（LOGO 13 折）")
+    print("=" * 76)
+    cols3 = ["特徵", "實驗", "訓練", "測試", "acc", "macroF1", "R_未熟(0+1)", "R_成熟/可食(2)", "R_過熟(3)",
+             "成熟→未熟", "過熟→成熟", "過熟→未熟", "相鄰翻轉率"]
+    print(df[df["類別"] == 3][cols3].fillna("").to_string(index=False))
+    print("\n參考：4 類模型預測（測試三窗口）直接合併成 3 類——不是 3 類模型，只用來對照重訓 3 類是否有幫助")
+    print(pd.DataFrame(collapsed_ref).to_string(index=False))
