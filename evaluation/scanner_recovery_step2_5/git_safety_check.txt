@@ -1,0 +1,15 @@
+c:\Users\user\electronic-nose-pineapple-ripeness-assessment
+  before: {'branch': 'main', 'head': '4e1a93d64f9959df5736125fb309aeb0ab7102b1', 'status': 'D "3rd Grade - Semester 2(\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\344\\270\\255)/114_2_midterm_demo_video.mov"'}
+  after : {'branch': 'main', 'head': '4e1a93d64f9959df5736125fb309aeb0ab7102b1', 'status': 'D "3rd Grade - Semester 2(\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\344\\270\\255)/114_2_midterm_demo_video.mov"'}
+c:\Users\user\enose-gateway-fix
+  before: {'branch': 'analysis/reliability-phase1', 'head': '2e881c1ed9b369105c306319cccd77303cf503dc', 'status': ''}
+  after : {'branch': 'analysis/reliability-phase1', 'head': '2e881c1ed9b369105c306319cccd77303cf503dc', 'status': ''}
+c:\Users\user\enose-fingerprint-study
+  before: {'branch': 'analysis/odor-fingerprint-feasibility', 'head': '1f1f0e67ab2a4463b386af298eee56f3b0016a8e', 'status': ''}
+  after : {'branch': 'analysis/odor-fingerprint-feasibility', 'head': '1f1f0e67ab2a4463b386af298eee56f3b0016a8e', 'status': ''}
+c:\Users\user\enose-scanner-recovery
+  before: {'branch': 'analysis/scanner-recovery', 'head': '799552c15529cba204442c4b1168947a61c14322', 'status': ''}
+  after : {'branch': 'analysis/scanner-recovery', 'head': '799552c15529cba204442c4b1168947a61c14322', 'status': ''}
+C:\Users\user\enose-scanner-recovery-step2-5
+  before: {'branch': 'analysis/scanner-recovery-step2-5', 'head': '799552c15529cba204442c4b1168947a61c14322', 'status': 'M "3rd Grade - Semester 2(\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\344\\270\\255)/pineapple_deployment_system/app_local.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_deployment_system/app_local.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_final/app_local.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_final/calibrate_air_30s.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_final/inference_30s.py"\n?? "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/evaluation/scanner_recovery_step2_5/"'}
+  after : {'branch': 'analysis/scanner-recovery-step2-5', 'head': '799552c15529cba204442c4b1168947a61c14322', 'status': 'M "3rd Grade - Semester 2(\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\344\\270\\255)/pineapple_deployment_system/app_local.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_deployment_system/app_local.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_final/app_local.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_final/calibrate_air_30s.py"\n M "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/pineapple_final/inference_30s.py"\n?? "Semester 2 Final Exam (\\344\\270\\211\\344\\270\\213-\\346\\234\\237\\346\\234\\253)/evaluation/scanner_recovery_step2_5/"'}
