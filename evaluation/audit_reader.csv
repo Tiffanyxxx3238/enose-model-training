@@ -1,0 +1,303 @@
+﻿pid,date,kind,file,label,status,rows_correct
+1,20260201,fruit,pineapple_01_20260201.xlsx,0.0,正常,900.0
+1,20260201,air,pineapple_01_20260201_air.xlsx,0.0,正常,900.0
+1,20260202,fruit,pineapple_01_20260202.xlsx,0.0,正常,900.0
+1,20260202,air,pineapple_01_20260202_air.xlsx,0.0,正常,900.0
+1,20260203,fruit,pineapple_01_20260203.xlsx,1.0,正常,900.0
+1,20260203,air,pineapple_01_20260203_air.xlsx,1.0,正常,900.0
+1,20260204,fruit,pineapple_01_20260204.xlsx,2.0,正常,900.0
+1,20260204,air,pineapple_01_20260204_air.xlsx,2.0,正常,900.0
+1,20260205,fruit,pineapple_01_20260205.xlsx,2.0,正常,900.0
+1,20260205,air,pineapple_01_20260205_air.xlsx,2.0,正常,900.0
+1,20260206,fruit,pineapple_01_20260206.xlsx,3.0,正常,900.0
+1,20260206,air,pineapple_01_20260206_air.xlsx,3.0,正常,900.0
+1,20260207,fruit,pineapple_01_20260207.xlsx,3.0,正常,900.0
+1,20260207,air,pineapple_01_20260207_air.xlsx,3.0,正常,900.0
+1,20260208,fruit,pineapple_01_20260208.xlsx,,正常,900.0
+1,20260208,air,pineapple_01_20260208_air.xlsx,,正常,900.0
+1,20260209,fruit,pineapple_01_20260209.xlsx,,正常,900.0
+1,20260209,air,pineapple_01_20260209_air.xlsx,,正常,900.0
+1,20260210,fruit,pineapple_01_20260210.xlsx,,正常,900.0
+1,20260210,air,pineapple_01_20260210_air.xlsx,,正常,900.0
+1,20260211,fruit,pineapple_01_20260211.xlsx,,正常,900.0
+1,20260211,air,pineapple_01_20260211_air.xlsx,,正常,900.0
+1,20260212,fruit,pineapple_01_20260212.xlsx,3.0,正常,900.0
+1,20260212,air,pineapple_01_20260212_air.xlsx,3.0,正常,900.0
+2,20260202,fruit,pineapple_02_20260202.xlsx,0.0,正常,900.0
+2,20260202,air,pineapple_02_20260202_air.xlsx,0.0,正常,900.0
+2,20260203,fruit,pineapple_02_20260203.xlsx,0.0,正常,900.0
+2,20260203,air,pineapple_02_20260203_air.xlsx,0.0,正常,900.0
+2,20260204,fruit,pineapple_02_20260204.xlsx,0.0,正常,900.0
+2,20260204,air,pineapple_02_20260204_air.xlsx,0.0,正常,900.0
+2,20260205,fruit,pineapple_02_20260205.xlsx,0.0,正常,900.0
+2,20260205,air,pineapple_02_20260205_air.xlsx,0.0,正常,900.0
+2,20260206,fruit,pineapple_02_20260206.xlsx,0.0,正常,900.0
+2,20260206,air,pineapple_02_20260206_air.xlsx,0.0,正常,900.0
+2,20260207,fruit,pineapple_02_20260207.xlsx,0.0,正常,900.0
+2,20260207,air,pineapple_02_20260207_air.xlsx,0.0,正常,900.0
+2,20260208,fruit,pineapple_02_20260208.xlsx,,正常,900.0
+2,20260208,air,pineapple_02_20260208_air.xlsx,,正常,900.0
+2,20260209,fruit,pineapple_02_20260209.xlsx,,正常,900.0
+2,20260209,air,pineapple_02_20260209_air.xlsx,,正常,900.0
+2,20260210,fruit,pineapple_02_20260210.xlsx,,正常,900.0
+2,20260210,air,pineapple_02_20260210_air.xlsx,,正常,900.0
+2,20260211,fruit,pineapple_02_20260211.xlsx,,正常,900.0
+2,20260211,air,pineapple_02_20260211_air.xlsx,,正常,900.0
+2,20260212,fruit,pineapple_02_20260212.xlsx,1.0,正常,900.0
+2,20260212,air,pineapple_02_20260212_air.xlsx,1.0,正常,900.0
+2,20260213,fruit,pineapple_02_20260213.xlsx,,正常,900.0
+2,20260213,air,pineapple_02_20260213_air.xlsx,,正常,900.0
+2,20260214,fruit,pineapple_02_20260214.xlsx,,正常,900.0
+2,20260214,air,pineapple_02_20260214_air.xlsx,,正常,900.0
+2,20260215,fruit,pineapple_02_20260215.xlsx,,正常,900.0
+2,20260215,air,pineapple_02_20260215_air.xlsx,,正常,900.0
+2,20260217,fruit,pineapple_02_20260217.xlsx,,正常,900.0
+2,20260217,air,pineapple_02_20260217_air.xlsx,,正常,900.0
+2,20260219,fruit,pineapple_02_20260219.xlsx,,正常,900.0
+2,20260219,air,pineapple_02_20260219_air.xlsx,,正常,900.0
+3,20260203,fruit,pineapple_03_20260203.xlsx,0.0,正常,900.0
+3,20260203,air,pineapple_03_20260203_air.xlsx,0.0,正常,900.0
+3,20260204,fruit,pineapple_03_20260204.xlsx,0.0,正常,900.0
+3,20260204,air,pineapple_03_20260204_air.xlsx,0.0,正常,900.0
+3,20260205,fruit,pineapple_03_20260205.xlsx,0.0,正常,900.0
+3,20260205,air,pineapple_03_20260205_air.xlsx,0.0,正常,900.0
+3,20260206,fruit,pineapple_03_20260206.xlsx,0.0,正常,900.0
+3,20260206,air,pineapple_03_20260206_air.xlsx,0.0,正常,900.0
+3,20260207,fruit,pineapple_03_20260207.xlsx,1.0,正常,900.0
+3,20260207,air,pineapple_03_20260207_air.xlsx,1.0,正常,900.0
+3,20260208,fruit,pineapple_03_20260208.xlsx,1.0,正常,900.0
+3,20260208,air,pineapple_03_20260208_air.xlsx,1.0,正常,900.0
+3,20260209,fruit,pineapple_03_20260209.xlsx,1.0,正常,900.0
+3,20260209,air,pineapple_03_20260209_air.xlsx,1.0,正常,900.0
+3,20260210,fruit,pineapple_03_20260210.xlsx,2.0,正常,900.0
+3,20260210,air,pineapple_03_20260210_air.xlsx,2.0,正常,900.0
+3,20260211,fruit,pineapple_03_20260211.xlsx,2.0,正常,900.0
+3,20260211,air,pineapple_03_20260211_air.xlsx,2.0,正常,900.0
+3,20260212,fruit,pineapple_03_20260212.xlsx,2.0,正常,900.0
+3,20260212,air,pineapple_03_20260212_air.xlsx,2.0,正常,900.0
+3,20260213,fruit,pineapple_03_20260213.xlsx,2.0,正常,900.0
+3,20260213,air,pineapple_03_20260213_air.xlsx,2.0,正常,900.0
+3,20260214,fruit,pineapple_03_20260214.xlsx,2.0,正常,900.0
+3,20260214,air,pineapple_03_20260214_air.xlsx,2.0,正常,900.0
+4,20260203,fruit,pineapple_04_20260203.xlsx,0.0,正常,900.0
+4,20260203,air,pineapple_04_20260203_air.xlsx,0.0,正常,900.0
+4,20260204,fruit,pineapple_04_20260204.xlsx,0.0,正常,900.0
+4,20260204,air,pineapple_04_20260204_air.xlsx,0.0,正常,900.0
+4,20260205,fruit,pineapple_04_20260205.xlsx,0.0,正常,900.0
+4,20260205,air,pineapple_04_20260205_air.xlsx,0.0,正常,899.0
+4,20260206,fruit,pineapple_04_20260206.xlsx,1.0,正常,900.0
+4,20260206,air,pineapple_04_20260206_air.xlsx,1.0,正常,900.0
+4,20260207,fruit,pineapple_04_20260207.xlsx,1.0,正常,900.0
+4,20260207,air,pineapple_04_20260207_air.xlsx,1.0,正常,900.0
+4,20260208,fruit,pineapple_04_20260208.xlsx,1.0,正常,900.0
+4,20260208,air,pineapple_04_20260208_air.xlsx,1.0,正常,900.0
+4,20260209,fruit,pineapple_04_20260209.xlsx,1.0,正常,900.0
+4,20260209,air,pineapple_04_20260209_air.xlsx,1.0,正常,900.0
+4,20260210,fruit,pineapple_04_20260210.xlsx,2.0,正常,900.0
+4,20260210,air,pineapple_04_20260210_air.xlsx,2.0,正常,900.0
+4,20260211,fruit,pineapple_04_20260211.xlsx,2.0,正常,900.0
+4,20260211,air,pineapple_04_20260211_air.xlsx,2.0,正常,900.0
+4,20260212,fruit,pineapple_04_20260212.xlsx,2.0,正常,900.0
+4,20260212,air,pineapple_04_20260212_air.xlsx,2.0,正常,900.0
+4,20260213,fruit,pineapple_04_20260213.xlsx,2.0,正常,900.0
+4,20260213,air,pineapple_04_20260213_air.xlsx,2.0,正常,900.0
+4,20260214,fruit,pineapple_04_20260214.xlsx,3.0,正常,900.0
+4,20260214,air,pineapple_04_20260214_air.xlsx,3.0,正常,900.0
+5,20260202,fruit,pineapple_05_20260202.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260202,air,pineapple_20260202_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260203,fruit,pineapple_05_20260203.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260203,air,pineapple_05_20260203_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260204,fruit,pineapple_05_20260204.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260204,air,pineapple_05_20260204_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260205,fruit,pineapple_05_20260205.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260205,air,pineapple_05_20260205_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260206,fruit,pineapple_05_20260206.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260206,air,pineapple_05_20260206_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260207,fruit,pineapple_05_20260207.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260207,air,pineapple_05_20260207_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260208,fruit,pineapple_05_20260208.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260208,air,pineapple_05_20260208_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260209,fruit,pineapple_05_20260209.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260209,air,pineapple_05_20260209_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260210,fruit,pineapple_05_20260210.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260210,air,pineapple_05_20260210_air.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260211,fruit,pineapple_05_20260211.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+5,20260211,air,pineapple_05_20260211_air.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260202,fruit,pineapple_06_20260202.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260203,fruit,pineapple_06_20260203.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260203,air,pineapple_06_20260203_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260204,fruit,pineapple_06_20260204.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260204,air,pineapple_06_20260204_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260205,fruit,pineapple_06_20260205.xlsx,0.0,正常,899.0
+6,20260205,air,pineapple_06_20260205_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260206,fruit,pineapple_06_20260206.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260206,air,pineapple_06_20260206_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260209,fruit,pineapple_06_20260209.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260209,air,pineapple_06_20260209_air.xlsx,0.0,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260210,fruit,pineapple_06_20260210.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260210,air,pineapple_06_20260210_air.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+6,20260211,fruit,pineapple_06_20260211.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,1800.0
+6,20260211,air,pineapple_06_20260211_air.xlsx,,欄名錯位（notebook 讀不到感測欄 → 特徵 NaN）,900.0
+7,20260203,fruit,pineapple_07_20260203.xlsx,1.0,正常,900.0
+7,20260203,air,pineapple_20260203_air.xlsx,1.0,正常,900.0
+7,20260204,fruit,pineapple_07_20260204.xlsx,,正常,900.0
+7,20260204,air,pineapple_20260204_air.xlsx,,正常,900.0
+7,20260205,fruit,pineapple_07_20260205.xlsx,,正常,901.0
+7,20260205,air,pineapple_20260205_air.xlsx,,正常,900.0
+7,20260206,fruit,pineapple_07_20260206.xlsx,,正常,900.0
+7,20260206,air,pineapple_07_20260206_air.xlsx,,正常,900.0
+7,20260207,fruit,pineapple_07_20260207.xlsx,,正常,901.0
+7,20260207,air,pineapple_07_20260207_air.xlsx,,正常,900.0
+7,20260208,fruit,pineapple_07_20260208.xlsx,,正常,900.0
+7,20260208,air,pineapple_07_20260208_air.xlsx,,正常,900.0
+7,20260209,fruit,pineapple_07_20260209.xlsx,,正常,900.0
+7,20260209,air,pineapple_07_20260209_air.xlsx,,正常,900.0
+7,20260210,fruit,pineapple_07_20260210.xlsx,,正常,900.0
+7,20260210,air,pineapple_07_20260210_air.xlsx,,正常,900.0
+7,20260211,fruit,pineapple_07_20260211.xlsx,,正常,900.0
+7,20260211,air,pineapple_07_20260211_air.xlsx,,正常,900.0
+7,20260212,fruit,pineapple_07_20260212.xlsx,,正常,900.0
+7,20260212,air,pineapple_07_20260212_air.xlsx,,正常,900.0
+7,20260213,fruit,pineapple_07_20260213.xlsx,,正常,900.0
+7,20260213,air,pineapple_07_20260213_air.xlsx,,正常,900.0
+7,20260222,fruit,pineapple_07_20260222.xlsx,,正常,900.0
+7,20260222,air,pineapple_07_20260222_air.xlsx,,正常,900.0
+7,20260223,fruit,pineapple_07_20260223.xlsx,,正常,900.0
+7,20260223,air,pineapple_07_20260223_air.xlsx,,正常,900.0
+7,20260305,fruit,pineapple_07_20260305.xlsx,3.0,正常,900.0
+7,20260305,air,pineapple_07_20260305_air.xlsx,3.0,正常,900.0
+7,20260306,fruit,pineapple_07_20260306.xlsx,3.0,正常,901.0
+7,20260306,air,pineapple_07_20260306_air.xlsx,3.0,正常,900.0
+8,20260203,fruit,pineapple_08_20260203.xlsx,1.0,正常,900.0
+8,20260204,fruit,pineapple_08_20260204.xlsx,,正常,900.0
+8,20260205,fruit,pineapple_08_20260205.xlsx,,正常,900.0
+8,20260206,fruit,pineapple_08_20260206.xlsx,,正常,900.0
+8,20260206,air,pineapple_08_20260206_air.xlsx,,正常,900.0
+8,20260207,fruit,pineapple_08_20260207.xlsx,,正常,900.0
+8,20260207,air,pineapple_08_20260207_air.xlsx,,正常,900.0
+8,20260208,fruit,pineapple_08_20260208.xlsx,,正常,900.0
+8,20260208,air,pineapple_08_20260208_air.xlsx,,正常,900.0
+8,20260209,fruit,pineapple_08_20260209.xlsx,,正常,900.0
+8,20260209,air,pineapple_08_20260209_air.xlsx,,正常,900.0
+8,20260210,fruit,pineapple_08_20260210.xlsx,,正常,900.0
+8,20260210,air,pineapple_08_20260210_air.xlsx,,正常,900.0
+8,20260211,fruit,pineapple_08_20260211.xlsx,,正常,900.0
+8,20260211,air,pineapple_08_20260211_air.xlsx,,正常,901.0
+8,20260212,fruit,pineapple_08_20260212.xlsx,,正常,900.0
+8,20260212,air,pineapple_08_20260212_air.xlsx,,正常,900.0
+8,20260213,fruit,pineapple_08_20260213.xlsx,,正常,900.0
+8,20260213,air,pineapple_08_20260213_air.xlsx,,正常,901.0
+8,20260222,fruit,pineapple_08_20260222.xlsx,,正常,900.0
+8,20260222,air,pineapple_08_20260222_air.xlsx,,正常,900.0
+8,20260223,fruit,pineapple_08_20260223.xlsx,,正常,900.0
+8,20260223,air,pineapple_08_20260223_air.xlsx,,正常,900.0
+8,20260305,fruit,pineapple_08_20260305.xlsx,3.0,正常,900.0
+8,20260305,air,pineapple_08_20260305_air.xlsx,3.0,正常,900.0
+8,20260306,fruit,pineapple_08_20260306.xlsx,3.0,正常,900.0
+8,20260306,air,pineapple_08_20260306_air.xlsx,3.0,正常,900.0
+9,20260207,fruit,pineapple_09_20260207.xlsx,0.0,正常,900.0
+9,20260207,air,pineapple_09_20260207_air.xlsx,0.0,正常,900.0
+9,20260208,fruit,pineapple_09_20260208.xlsx,,正常,900.0
+9,20260208,air,pineapple_09_20260208_air.xlsx,,正常,900.0
+9,20260209,fruit,pineapple_09_20260209.xlsx,,正常,900.0
+9,20260209,air,pineapple_09_20260209_air.xlsx,,正常,900.0
+9,20260210,fruit,pineapple_09_20260210.xlsx,,正常,900.0
+9,20260210,air,pineapple_09_20260210_air.xlsx,,正常,900.0
+9,20260211,fruit,pineapple_09_20260211.xlsx,,正常,900.0
+9,20260211,air,pineapple_09_20260211_air.xlsx,,正常,900.0
+9,20260212,fruit,pineapple_09_20260212.xlsx,1.0,正常,900.0
+9,20260212,air,pineapple_09_20260212_air.xlsx,1.0,正常,900.0
+9,20260213,fruit,pineapple_09_20260213.xlsx,,正常,900.0
+9,20260213,air,pineapple_09_20260213_air.xlsx,,正常,900.0
+9,20260214,fruit,pineapple_09_20260214.xlsx,,正常,900.0
+9,20260214,air,pineapple_09_20260214_air.xlsx,,正常,900.0
+9,20260215,fruit,pineapple_09_20260215.xlsx,,正常,900.0
+9,20260215,air,pineapple_09_20260215_air.xlsx,,正常,900.0
+9,20260217,fruit,pineapple_09_20260217.xlsx,,正常,900.0
+9,20260217,air,pineapple_09_20260217_air.xlsx,,正常,900.0
+9,20260219,fruit,pineapple_09_20260219.xlsx,,正常,900.0
+9,20260219,air,pineapple_09_20260219_air.xlsx,,正常,900.0
+10,20260208,fruit,pineapple_10_20260208.xlsx,0.0,正常,900.0
+10,20260208,air,pineapple_10_20260208_air.xlsx,0.0,正常,900.0
+10,20260209,fruit,pineapple_10_20260209.xlsx,1.0,正常,900.0
+10,20260209,air,pineapple_10_20260209_air.xlsx,1.0,正常,900.0
+10,20260210,fruit,pineapple_10_20260210.xlsx,1.0,正常,900.0
+10,20260210,air,pineapple_10_20260210_air.xlsx,1.0,正常,900.0
+10,20260211,fruit,pineapple_10_20260211.xlsx,1.0,正常,900.0
+10,20260211,air,pineapple_10_20260211_air.xlsx,1.0,正常,900.0
+10,20260212,fruit,pineapple_10_20260212.xlsx,1.0,正常,900.0
+10,20260212,air,pineapple_10_20260212_air.xlsx,1.0,正常,900.0
+10,20260213,fruit,pineapple_10_20260213.xlsx,2.0,正常,900.0
+10,20260213,air,pineapple_10_20260213_air.xlsx,2.0,正常,900.0
+10,20260214,fruit,pineapple_10_20260214.xlsx,2.0,正常,900.0
+10,20260214,air,pineapple_10_20260214_air.xlsx,2.0,正常,900.0
+10,20260215,fruit,pineapple_10_20260215.xlsx,2.0,正常,900.0
+10,20260215,air,pineapple_10_20260215_air.xlsx,2.0,正常,900.0
+11,20260208,fruit,pineapple_11_20260208.xlsx,0.0,正常,900.0
+11,20260208,air,pineapple_11_20260208_air.xlsx,0.0,正常,900.0
+11,20260209,fruit,pineapple_11_20260209.xlsx,1.0,正常,900.0
+11,20260209,air,pineapple_11_20260209_air.xlsx,1.0,正常,900.0
+11,20260210,fruit,pineapple_11_20260210.xlsx,1.0,正常,900.0
+11,20260210,air,pineapple_11_20260210_air.xlsx,1.0,正常,900.0
+11,20260211,fruit,pineapple_11_20260211.xlsx,1.0,正常,900.0
+11,20260211,air,pineapple_11_20260211_air.xlsx,1.0,正常,900.0
+11,20260212,fruit,pineapple_11_20260212.xlsx,1.0,正常,900.0
+11,20260212,air,pineapple_11_20260212_air.xlsx,1.0,正常,900.0
+11,20260213,fruit,pineapple_11_20260213.xlsx,2.0,正常,900.0
+11,20260213,air,pineapple_11_20260213_air.xlsx,2.0,正常,900.0
+11,20260214,fruit,pineapple_11_20260214.xlsx,2.0,檔案本身無資料表頭（兩種讀法都讀不到）,
+11,20260214,air,pineapple_11_20260214_air.xlsx,2.0,正常,900.0
+11,20260215,fruit,pineapple_11_20260215.xlsx,2.0,正常,900.0
+11,20260215,air,pineapple_11_20260215_air.xlsx,2.0,正常,900.0
+12,20260301,fruit,pineapple_12_20260301.xlsx,1.0,正常,900.0
+12,20260301,air,pineapple_12_20260301_air.xlsx,1.0,正常,900.0
+12,20260302,fruit,pineapple_12_20260302.xlsx,1.0,正常,900.0
+12,20260302,air,pineapple_12_20260302_air.xlsx,1.0,正常,900.0
+12,20260303,fruit,pineapple_12_20260303.xlsx,1.0,正常,900.0
+12,20260303,air,pineapple_12_20260303_air.xlsx,1.0,正常,900.0
+12,20260304,fruit,pineapple_12_20260304.xlsx,1.0,正常,900.0
+12,20260304,air,pineapple_12_20260304_air.xlsx,1.0,正常,900.0
+12,20260305,fruit,pineapple_12_20260305.xlsx,2.0,正常,900.0
+12,20260305,air,pineapple_12_20260305_air.xlsx,2.0,正常,900.0
+12,20260306,fruit,pineapple_12_20260306.xlsx,2.0,正常,900.0
+12,20260306,air,pineapple_12_20260306_air.xlsx,2.0,正常,900.0
+12,20260308,fruit,pineapple_12_20260308.xlsx,2.0,正常,900.0
+12,20260308,air,pineapple_12_20260308_air.xlsx,2.0,正常,900.0
+12,20260309,fruit,pineapple_12_20260309.xlsx,2.0,正常,900.0
+12,20260309,air,pineapple_12_20260309_air.xlsx,2.0,正常,900.0
+12,20260310,fruit,pineapple_12_20260310.xlsx,2.0,正常,900.0
+12,20260310,air,pineapple_12_20260310_air.xlsx,2.0,正常,900.0
+12,20260311,fruit,pineapple_12_20260311.xlsx,2.0,正常,900.0
+12,20260311,air,pineapple_12_20260311_air.xlsx,2.0,正常,900.0
+12,20260312,fruit,pineapple_12_20260312.xlsx,2.0,正常,900.0
+12,20260312,air,pineapple_12_20260312_air.xlsx,2.0,正常,900.0
+12,20260313,fruit,pineapple_12_20260313.xlsx,2.0,正常,900.0
+12,20260313,air,pineapple_12_20260313_air.xlsx,2.0,正常,900.0
+13,20260228,fruit,pineapple_13_20260228.xlsx,1.0,正常,900.0
+13,20260228,air,pineapple_13_20260228_air.xlsx,1.0,正常,900.0
+13,20260301,fruit,pineapple_13_20260301.xlsx,1.0,正常,900.0
+13,20260301,air,pineapple_13_20260301_air.xlsx,1.0,正常,900.0
+13,20260302,fruit,pineapple_13_20260302.xlsx,2.0,正常,900.0
+13,20260302,air,pineapple_13_20260302_air.xlsx,2.0,正常,900.0
+13,20260303,fruit,pineapple_13_20260303.xlsx,2.0,正常,900.0
+13,20260303,air,pineapple_13_20260303_air.xlsx,2.0,正常,900.0
+13,20260304,fruit,pineapple_13_20260304.xlsx,1.0,檔案本身無資料表頭（兩種讀法都讀不到）,
+13,20260304,air,pineapple_13_20260304_air.xlsx,1.0,檔案本身無資料表頭（兩種讀法都讀不到）,
+13,20260305,fruit,pineapple_13_20260305.xlsx,1.0,正常,900.0
+13,20260305,air,pineapple_13_20260305_air.xlsx,1.0,正常,900.0
+13,20260306,fruit,pineapple_13_20260306.xlsx,2.0,正常,900.0
+13,20260306,air,pineapple_13_20260306_air.xlsx,2.0,正常,900.0
+13,20260307,fruit,pineapple_13_20260307.xlsx,3.0,正常,900.0
+13,20260307,air,pineapple_13_20260307_air.xlsx,3.0,正常,900.0
+13,20260308,fruit,pineapple_13_20260308.xlsx,3.0,正常,900.0
+13,20260308,air,pineapple_13_20260308_air.xlsx,3.0,正常,900.0
+13,20260309,fruit,pineapple_13_20260309.xlsx,3.0,正常,900.0
+13,20260309,air,pineapple_13_20260309_air.xlsx,3.0,正常,900.0
+13,20260310,fruit,pineapple_13_20260310.xlsx,3.0,正常,900.0
+13,20260310,air,pineapple_13_20260310_air.xlsx,3.0,正常,900.0
+13,20260311,fruit,pineapple_13_20260311.xlsx,3.0,正常,900.0
+13,20260311,air,pineapple_13_20260311_air.xlsx,3.0,正常,900.0
+13,20260312,fruit,pineapple_13_20260312.xlsx,3.0,正常,900.0
+13,20260312,air,pineapple_13_20260312_air.xlsx,3.0,正常,900.0
+13,20260313,fruit,pineapple_13_20260313.xlsx,3.0,正常,900.0
+13,20260313,air,pineapple_13_20260313_air.xlsx,3.0,正常,900.0
