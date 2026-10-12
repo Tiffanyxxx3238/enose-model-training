@@ -1,0 +1,6 @@
+﻿sensor,median_abs_fruit_minus_air_ADC,median_air_drift_within_900s_ADC,median_day_to_day_air_change_ADC,P(|S−B| > air drift within session),P(|S−B| > day-to-day air change)
+MQ2,3.0,2.187,9.0,0.677,0.222
+MQ3,5.0,3.581,16.0,0.747,0.212
+MQ9,5.0,2.929,10.5,0.677,0.212
+MQ135,3.0,2.449,7.0,0.586,0.182
+TGS2602,2.0,0.859,9.5,0.616,0.111

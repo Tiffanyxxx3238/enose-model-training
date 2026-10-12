@@ -9,6 +9,8 @@
 | `backtest.py` / `backtest_out.txt` | 用歷史資料比較 4 個 gateway 版本，並做 LOGO 重訓評估 |
 | `retrain_round1.py` / `retrain_round1_out.txt` | 第一輪重新訓練：特徵穩定度分析 + 嚴格 LOGO（每折重新選特徵） |
 | `retrain_round2.py` / `retrain_round2_out.txt` | 第二輪：4 類／3 類 × 單窗口／多窗口訓練 |
+| `round3_diagnosis.py` / `round3_diagnosis.md`（輸出：`round3_*.csv/png`、`round3_results/`） | 第三輪：標籤一致性、動態訊號、Stage 2 誤判歸因 |
+| `round4_analysis.py` / `round4_report.md`（輸出：`round4_results/`） | 第四輪：資料品質、訊號表示、群組／月份混雜、探索性 PCA 校正、溫濕度、訊號對空氣波動比 |
 
 執行（需要 `enose_model_training/orkspace/data/raw/`、`pineapple_final/` 與 git）：
 
@@ -17,6 +19,8 @@ python -u audit_reader.py
 python -u backtest.py > backtest_out.txt
 python -u retrain_round1.py > retrain_round1_out.txt
 python -u retrain_round2.py > retrain_round2_out.txt
+python -u round3_diagnosis.py > round3_results/round3_run_log.txt
+python -u round4_analysis.py > round4_results/round4_run_log.txt   # 約 15～20 分鐘（含 10 個亂數種子）
 ```
 
 ## 資料
@@ -68,3 +72,16 @@ notebook 的 `read_raw_xlsx` 固定把第 2 列當欄名。鳳梨 05、06 的檔
 - 多窗口：每天開頭 150 秒內 5 個不重疊 30 秒窗口（起點 0/30/60/90/120 筆），每窗口權重 1/5；只擴增訓練鳳梨，測試仍用開頭三窗口
 - 多數類別基準：4 類 0.317（macroF1 0.120）；3 類 0.584（macroF1 0.246）
 - 101 天的準確率標準誤約 ±0.05，2～5 個百分點的差異不能視為確定改善
+
+## 第三輪（`round3_diagnosis.py`，報告 `round3_diagnosis.md`）
+
+- 重現第二輪主要基準（4 類／FIXED11／多窗口訓練／三窗口測試），並匯出逐日 LOGO 預測（`round3_logo_predictions.csv`）
+- 發現 2 天鳳梨檔與空氣檔逐筆相同（鳳梨 3 號 02-14、4 號 02-06）；鳳梨讀值中位數 ≤ 空氣基準；空氣基準絕對值主要由標註群組決定
+- `retrain_round2.py` 只增加逐日診斷輸出並移入 `__main__`，`retrain_round2_out.txt` 逐字相同
+
+## 第四輪（`round4_analysis.py`，報告 `round4_report.md`）
+
+- 事先指定 15 個方法：4A 資料品質（A0、A1、A2）、4B 訊號表示（B0 FIXED11、Raw、S−B、S/B、log S/B、S/B＋B）、4D 探索性 PCA 校正（log 空間，k=0/1/2）、4E 溫濕度（輸入／訓練折線性補償）
+- 事後診斷（非預先指定，只用於解讀）：只計群組 A＋B／C＋D、留出整個群組、亂數種子 0～9、鳳梨−空氣差距 vs 空氣漂移
+- 4D 是 PCA-based exploratory correction，**不是** CPCA 或 Direct Standardization（缺少參考氣體與轉移樣本，見報告 E 節）
+- 主要結論：跨鳳梨 LOGO 下看似的改善主要來自群組捷徑；留出整個群組時所有方法 ≤ 0.34
