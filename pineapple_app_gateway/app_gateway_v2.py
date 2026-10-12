@@ -55,6 +55,9 @@ N_WINDOWS = 3
 WINDOW_STEP = 10
 SCAN_ROWS = WINDOW + (N_WINDOWS - 1) * WINDOW_STEP
 
+# 收不滿 SCAN_ROWS 筆時，最多再多等幾秒就放棄
+SCAN_TIMEOUT_EXTRA_SEC = 15
+
 # 後處理模式：
 #   "raw"    = 只用模型機率（預設）
 #   "legacy" = 舊版初熟／過熟修正規則（門檻是依舊版未正規化的比值調出來的，僅供對照）
@@ -289,13 +292,26 @@ def _validate_air_base(air):
 
 
 def _sampling_quality(rows):
-    ts = [r["timestamp_ms"] for r in rows if r.get("timestamp_ms") is not None]
+    ts_all = [r.get("timestamp_ms") for r in rows]
+    n_missing = sum(t is None for t in ts_all)
+    missing_ratio = round(n_missing / len(rows), 4) if rows else None
+
+    ts = [t for t in ts_all if t is not None]
     if len(ts) < 2:
-        return {"status": "unknown", "median_interval_sec": None, "span_sec": None}
+        return {
+            "status": "unknown",
+            "missing_timestamp_ratio": missing_ratio,
+            "median_interval_sec": None,
+            "max_interval_sec": None,
+            "gap_count": None,
+            "span_sec": None,
+            "window_span_sec": None,
+        }
 
     intervals = np.diff(ts) / 1000.0
     median_interval = float(np.median(intervals))
 
+    # 只有以下兩種會判定失敗；其餘欄位先當診斷資料，等實測後再決定門檻
     if np.any(intervals <= 0):
         # timestamp 倒退通常代表 Arduino 在取樣途中重啟
         status = "timestamp_reset"
@@ -304,11 +320,21 @@ def _sampling_quality(rows):
     else:
         status = "ok"
 
+    # 每個窗口第一筆到最後一筆實際涵蓋的秒數（任一端缺時間戳則為 None）
+    window_span = []
+    for start in range(0, len(rows) - WINDOW + 1, WINDOW_STEP):
+        a, b = ts_all[start], ts_all[start + WINDOW - 1]
+        window_span.append(round((b - a) / 1000.0, 3) if a is not None and b is not None else None)
+
     return {
         "status": status,
+        "missing_timestamp_ratio": missing_ratio,
         "median_interval_sec": round(median_interval, 4),
         "max_interval_sec": round(float(np.max(intervals)), 4),
+        # 間隔超過預期 1.5 倍的次數（可能是掉資料）
+        "gap_count": int(np.sum(intervals > 1.5 * EXPECTED_INTERVAL_SEC)),
         "span_sec": round((ts[-1] - ts[0]) / 1000.0, 3),
+        "window_span_sec": window_span,
     }
 
 
@@ -574,11 +600,14 @@ def _run_inference(warmup_sec: int, scan_id: str):
 
         ser, header, port = _open_serial_and_wait_header()
 
-        total_sec = warmup_sec + SCAN_ROWS
+        # 暖機後收滿 SCAN_ROWS 筆才停止（不是固定秒數，否則 1 Hz 下常只收到 49 筆）
+        expected_sec = warmup_sec + SCAN_ROWS
+        deadline_sec = expected_sec + SCAN_TIMEOUT_EXTRA_SEC
         all_rows = []
+        rows = []
         t0 = time.time()
 
-        while time.time() - t0 < total_sec:
+        while len(rows) < SCAN_ROWS and time.time() - t0 < deadline_sec:
             line = ser.readline().decode("utf-8", errors="ignore").strip()
 
             if not line:
@@ -601,7 +630,10 @@ def _run_inference(warmup_sec: int, scan_id: str):
             all_rows.append(parsed)
 
             elapsed = time.time() - t0
-            progress = min(99, int(elapsed / total_sec * 100))
+            if elapsed >= warmup_sec:
+                rows.append(parsed)
+
+            progress = min(99, int((min(elapsed, warmup_sec) + len(rows)) / expected_sec * 100))
             _set_state(progress=progress)
 
         ser.close()
@@ -611,14 +643,13 @@ def _run_inference(warmup_sec: int, scan_id: str):
             _set_state(status="error", error="沒有收集到任何感測資料")
             return
 
-        if len(all_rows) < WINDOW:
+        # 三窗口模式固定需要 SCAN_ROWS 筆，不足時不退化成單／雙窗口
+        if len(rows) < SCAN_ROWS:
             _set_state(
                 status="error",
-                error=f"取樣不足：只收到 {len(all_rows)} 筆，至少需要 {WINDOW} 筆",
+                error=f"取樣不足：暖機後只收到 {len(rows)} 筆，需要 {SCAN_ROWS} 筆",
             )
             return
-
-        rows = all_rows[-SCAN_ROWS:]
 
         # 多窗口推論：每個 30 筆窗口各算一次特徵與機率，再平均
         window_results = []
