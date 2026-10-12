@@ -1,0 +1,28 @@
+{
+  "deploy_name": "ET_10sec_for_RaspberryPi3",
+  "model_type": "ExtraTreesClassifier",
+  "target_window_sec": 10,
+  "train_variant": "reviewed_full_current",
+  "pool_name": "stable5",
+  "top_k": 12,
+  "n_features": 14,
+  "feature_columns": [
+    "MQ2_MQ3_ratio",
+    "TGS2602_min_norm",
+    "MQ3_MQ135_correlation",
+    "MQ3_MQ135_ratio",
+    "MQ3_range_norm",
+    "MQ3_TGS2602_ratio",
+    "MQ3_max_norm",
+    "MQ3_std_norm",
+    "MQ2_auc_norm",
+    "MQ9_slope",
+    "TGS2602_delta_std",
+    "TGS2602_std_norm",
+    "day_ratio",
+    "day_index"
+  ],
+  "teacher_reference_mean_acc": 0.8771645021645021,
+  "teacher_reference_std_acc": 0.1885090645964222,
+  "note": "Use 10-second sensor window. In Raspberry Pi inference, predict every 10 sec and optionally apply cummax / majority smoothing."
+}

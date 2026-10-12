@@ -1,0 +1,17 @@
+[
+  "MQ3_std_norm",
+  "MQ3_range_norm",
+  "MQ2_min_norm",
+  "MQ2_auc_norm",
+  "MQ3_auc_norm",
+  "MQ9_delta_max_abs",
+  "MQ2_mean_norm",
+  "MQ135_auc_norm",
+  "MQ2_max_norm",
+  "MQ135_std_norm",
+  "TGS2602_delta_std",
+  "MQ3_delta_max_abs",
+  "MQ135_delta_max_abs",
+  "MQ135_accel_std",
+  "MQ3_mean_norm"
+]

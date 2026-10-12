@@ -1,0 +1,49 @@
+{
+  "model_type": "student_tree_model_for_rpi3",
+  "teacher_model_type": "catboost_ordinal_threshold_v1_reviewed",
+  "teacher_best_config": {
+    "train_variant": "reviewed_full_current",
+    "pool_name": "stable5",
+    "top_k": 12,
+    "model_name": "CB_sqrt_bal",
+    "excel_w": 1.85,
+    "pos_weight_base": 1.25
+  },
+  "student_best_config": {
+    "student_model": "ET",
+    "feature_mode": "cb_rank_top8",
+    "label_mode": "true"
+  },
+  "selected_features_before_teacher_rank": [
+    "MQ9_slope",
+    "MQ2_MQ3_ratio",
+    "MQ9_delta_mean",
+    "MQ3_std_norm",
+    "MQ9_min_norm",
+    "MQ3_range_norm",
+    "MQ3_MQ135_ratio",
+    "TGS2602_min_norm",
+    "TGS2602_std_norm",
+    "MQ2_mean_norm",
+    "MQ2_auc_norm",
+    "day_ratio",
+    "day_index"
+  ],
+  "deploy_features_final": [
+    "MQ9_delta_mean",
+    "TGS2602_std_norm",
+    "MQ9_slope",
+    "MQ2_auc_norm",
+    "MQ3_std_norm",
+    "MQ2_MQ3_ratio",
+    "MQ3_range_norm",
+    "MQ3_MQ135_ratio",
+    "day_ratio",
+    "day_index"
+  ],
+  "n_features_final": 10,
+  "logo_mean_acc": 0.8615384615384615,
+  "logo_std_acc": 0.15590416617712227,
+  "logo_mean_macro_f1": 0.830913715913716,
+  "note": "For Raspberry Pi 3 deployment. Prediction should still apply date-order cummax / smoothing in inference.py."
+}

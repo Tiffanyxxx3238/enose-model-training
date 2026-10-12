@@ -1,0 +1,41 @@
+{
+  "model_type": "catboost_ordinal_threshold_v1",
+  "n_stages": 4,
+  "threshold_models": [
+    "cb_ge1.cbm",
+    "cb_ge2.cbm",
+    "cb_ge3.cbm"
+  ],
+  "feature_file": "feature_columns.json",
+  "scaler_file": "scaler.pkl",
+  "train_variant": "reviewed_full_current",
+  "pool_name": "stable5",
+  "top_k": 12,
+  "model_name": "CB_sqrt_bal",
+  "model_params": {
+    "iterations": 240,
+    "depth": 4,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 7,
+    "border_count": 64
+  },
+  "auto_class_weights": "SqrtBalanced",
+  "excel_w": 1.85,
+  "pos_weight_base": 1.25,
+  "selected_features": [
+    "MQ9_slope",
+    "MQ2_MQ3_ratio",
+    "MQ9_delta_mean",
+    "MQ3_std_norm",
+    "MQ9_min_norm",
+    "MQ3_range_norm",
+    "MQ3_MQ135_ratio",
+    "TGS2602_min_norm",
+    "TGS2602_std_norm",
+    "MQ2_mean_norm",
+    "MQ2_auc_norm",
+    "day_ratio",
+    "day_index"
+  ],
+  "note": "Prediction on Raspberry Pi should follow ordinal threshold inference + optional cummax postprocess."
+}

@@ -1,0 +1,32 @@
+{
+  "model_type": "short_window_student_tree_model_for_rpi3",
+  "best_window_sec": 10,
+  "student_model": "RF",
+  "feature_mode": "window_reselect",
+  "teacher_reference": {
+    "train_variant": "reviewed_full_current",
+    "pool_name": "stable5",
+    "top_k": 12
+  },
+  "selected_features": [
+    "MQ2_MQ3_ratio",
+    "TGS2602_min_norm",
+    "MQ3_MQ135_correlation",
+    "MQ3_MQ135_ratio",
+    "MQ3_range_norm",
+    "MQ3_TGS2602_ratio",
+    "MQ3_max_norm",
+    "MQ3_std_norm",
+    "MQ2_auc_norm",
+    "MQ9_slope",
+    "TGS2602_delta_std",
+    "TGS2602_std_norm",
+    "day_ratio",
+    "day_index"
+  ],
+  "n_features": 14,
+  "logo_mean_acc": 0.7288961038961038,
+  "logo_std_acc": 0.18965195782663438,
+  "logo_mean_macro_f1": 0.616979316979317,
+  "note": "Recommended for portable 5/10 second inference on Raspberry Pi 3."
+}

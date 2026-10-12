@@ -1,0 +1,31 @@
+{
+  "deploy_name": "ET_30sec_for_RaspberryPi3_NO_DAY_FEATURES",
+  "model_type": "ExtraTreesClassifier",
+  "target_window_sec": 30,
+  "train_variant": "reviewed_full_current",
+  "pool_name": "stable5",
+  "top_k": 12,
+  "n_features": 11,
+  "feature_columns": [
+    "MQ3_std_norm",
+    "MQ3_range_norm",
+    "MQ2_MQ3_ratio",
+    "MQ3_MQ135_ratio",
+    "MQ9_slope",
+    "TGS2602_min_norm",
+    "MQ2_auc_norm",
+    "MQ2_mean_norm",
+    "MQ9_min_norm",
+    "TGS2602_std_norm",
+    "MQ9_delta_mean"
+  ],
+  "exclude_features": [
+    "day_ratio",
+    "day_index"
+  ],
+  "note": "Single-shot portable inference. 30-sec version without day features.",
+  "display_policy": {
+    "mode": "base",
+    "desc": "Use raw model prediction only. No extra Stage2/Stage3 boundary rule."
+  }
+}

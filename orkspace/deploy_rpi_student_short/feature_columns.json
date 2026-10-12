@@ -1,0 +1,16 @@
+[
+  "MQ2_MQ3_ratio",
+  "TGS2602_min_norm",
+  "MQ3_MQ135_correlation",
+  "MQ3_MQ135_ratio",
+  "MQ3_range_norm",
+  "MQ3_TGS2602_ratio",
+  "MQ3_max_norm",
+  "MQ3_std_norm",
+  "MQ2_auc_norm",
+  "MQ9_slope",
+  "TGS2602_delta_std",
+  "TGS2602_std_norm",
+  "day_ratio",
+  "day_index"
+]

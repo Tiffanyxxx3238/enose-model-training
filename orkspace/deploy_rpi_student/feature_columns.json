@@ -1,0 +1,12 @@
+[
+  "MQ9_delta_mean",
+  "TGS2602_std_norm",
+  "MQ9_slope",
+  "MQ2_auc_norm",
+  "MQ3_std_norm",
+  "MQ2_MQ3_ratio",
+  "MQ3_range_norm",
+  "MQ3_MQ135_ratio",
+  "day_ratio",
+  "day_index"
+]

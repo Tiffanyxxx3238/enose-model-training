@@ -1,0 +1,37 @@
+{
+  "deploy_name": "ET_30sec_for_RaspberryPi3_NO_DAY_FEATURES_S3_SENSITIVE",
+  "model_type": "ExtraTreesClassifier",
+  "target_window_sec": 30,
+  "train_variant": "reviewed_full_current",
+  "pool_name": "stable5",
+  "top_k": 12,
+  "n_features": 11,
+  "feature_columns": [
+    "MQ3_std_norm",
+    "MQ3_range_norm",
+    "MQ2_MQ3_ratio",
+    "MQ3_MQ135_ratio",
+    "MQ9_slope",
+    "TGS2602_min_norm",
+    "MQ2_auc_norm",
+    "MQ2_mean_norm",
+    "MQ9_min_norm",
+    "TGS2602_std_norm",
+    "MQ9_delta_mean"
+  ],
+  "exclude_features": [
+    "day_ratio",
+    "day_index"
+  ],
+  "note": "A/B test package. Same ET 30-sec no-day model, but with a conservative Stage2/Stage3 boundary display rule. Do NOT replace the base package directly.",
+  "display_policy": {
+    "mode": "s3_sensitive",
+    "desc": "If pred==2 and overripe probability is meaningfully high, display mature-with-overripe-tendency.",
+    "rule": {
+      "trigger_pred_stage": 2,
+      "s3_min_proba": 0.18,
+      "s2s3_min_sum": 0.68,
+      "display_text": "成熟，但已有過熟傾向"
+    }
+  }
+}

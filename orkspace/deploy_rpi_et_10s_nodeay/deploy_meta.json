@@ -1,0 +1,28 @@
+{
+  "deploy_name": "ET_10sec_for_RaspberryPi3_NO_DAY_FEATURES",
+  "model_type": "ExtraTreesClassifier",
+  "target_window_sec": 10,
+  "train_variant": "reviewed_full_current",
+  "pool_name": "stable5",
+  "top_k": 12,
+  "n_features": 12,
+  "feature_columns": [
+    "MQ2_MQ3_ratio",
+    "TGS2602_min_norm",
+    "MQ3_MQ135_correlation",
+    "MQ3_MQ135_ratio",
+    "MQ3_range_norm",
+    "MQ3_TGS2602_ratio",
+    "MQ3_max_norm",
+    "MQ3_std_norm",
+    "MQ2_auc_norm",
+    "MQ9_slope",
+    "TGS2602_delta_std",
+    "TGS2602_std_norm"
+  ],
+  "exclude_features": [
+    "day_ratio",
+    "day_index"
+  ],
+  "note": "Single-shot portable inference. day_ratio/day_index removed because unknown in real field deployment."
+}
