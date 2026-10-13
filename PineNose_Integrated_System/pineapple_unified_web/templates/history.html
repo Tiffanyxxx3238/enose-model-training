@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>歷史紀錄｜鳳梨智慧辨識系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="history-body">
+    <main class="history-page">
+        <section class="history-header">
+            <div>
+                <p class="eyebrow">History Record Management</p>
+                <h1>歷史紀錄管理</h1>
+                <p>
+                    本頁顯示近 {{ retention_days }} 天內儲存的鳳梨成熟度辨識結果，
+                    可用資料夾分類、搬移或刪除紀錄。
+                </p>
+            </div>
+
+            <button class="history-primary-btn" onclick="openFolderModal()">
+                ＋ 新增資料夾
+            </button>
+        </section>
+
+        {% if expiring_soon %}
+        <section class="expire-alert">
+            <strong>⚠️ 即將過期提醒</strong>
+            <p>以下紀錄將在 3 天內自動刪除，請注意：</p>
+            <ul>
+                {% for item in expiring_soon %}
+                <li>{{ item.filename }}：剩餘 {{ item.remaining_days }} 天</li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        <section class="folder-browser">
+            <div class="folder-path">
+                <button class="back-btn" onclick="showAllFolders()">全部資料夾</button>
+                <span id="currentFolderText">目前位置：全部資料夾</span>
+            </div>
+
+            <div id="folderGrid" class="folder-grid">
+                {% for folder in folders %}
+                <button class="folder-card" onclick="openFolder('{{ folder.id }}', '{{ folder.name }}')">
+                    <div class="folder-icon">📁</div>
+                    <div class="folder-name">{{ folder.name }}</div>
+                    <div class="folder-subtitle">點擊查看紀錄</div>
+                </button>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="history-toolbar">
+            <div>
+                <label>搬移到</label>
+                <select id="moveTarget">
+                    {% for folder in folders %}
+                    <option value="{{ folder.id }}">{{ folder.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button class="history-secondary-btn" onclick="moveSelected()">搬移選取</button>
+            <button class="history-danger-btn" onclick="deleteSelected()">刪除選取</button>
+            <button class="history-secondary-btn" onclick="downloadSelectedRecords()">
+                    下載選取
+        </button>
+
+        <button class="history-secondary-btn" onclick="downloadCurrentFolder()">
+                下載目前資料夾
+        </button>
+        <button class="history-danger-btn" onclick="clearCurrentFolderRecords()">
+            清空目前資料夾
+        </button>
+
+        <button class="history-danger-btn" onclick="deleteCurrentFolder()">
+            刪除目前資料夾
+        </button>
+    </section>
+
+        <section class="history-list">
+            {% if records %}
+                {% for record in records %}
+                <article class="history-record" data-folder="{{ record.folder_id }}">
+                    <div class="record-check">
+                        <input type="checkbox" class="record-checkbox" value="{{ record.id }}">
+                    </div>
+
+                    <div class="record-main">
+                        <div class="record-title-row">
+                            <h2>📄 {{ record.filename }}</h2>
+                            <span class="expire-pill">剩餘 {{ record.remaining_days }} 天</span>
+                        </div>
+
+                        <div class="record-meta">
+                            <span>資料夾：{{ record.folder_name }}</span>
+                            <span>建立時間：{{ record.created_at }}</span>
+                            <span>到期時間：{{ record.expires_at }}</span>
+                        </div>
+
+                        <div class="record-result">
+                            <strong>成熟度結果：</strong>
+                            {% if record.ripeness_label %}
+                                {{ record.ripeness_label }}
+                            {% else %}
+                                未提供
+                            {% endif %}
+                        </div>
+
+                        {% if record.confidence %}
+                        <div class="record-result">
+                            <strong>信心分數：</strong>{{ record.confidence }}
+                        </div>
+                        {% endif %}
+
+                        {% if record.note %}
+                        <div class="record-note">
+                            <strong>備註：</strong>{{ record.note }}
+                        </div>
+                        {% endif %}
+
+                        {% if record.raw_text %}
+            <div class="record-raw-button-row">
+                    <button type="button" class="raw-open-btn" onclick="openRawModal('raw_{{ record.id }}')">
+                    查看原始資料
+                    </button>
+            </div>
+
+            <script type="application/json" id="raw_{{ record.id }}">{{ record.raw_text | tojson }}</script>
+            {% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            {% else %}
+                <div class="empty-history">
+                    <h2>目前沒有歷史紀錄</h2>
+                    <p>請先在成熟度辨識完成後，按下「儲存歷史紀錄」。</p>
+                </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <div id="folderModal" class="history-modal">
+        <div class="history-modal-card">
+            <h2>新增資料夾</h2>
+            <input id="newFolderName" type="text" placeholder="請輸入資料夾名稱，例如：第一批測試鳳梨">
+            <div class="modal-actions">
+                <button class="history-secondary-btn" onclick="closeFolderModal()">取消</button>
+                <button class="history-primary-btn" onclick="createFolder()">建立</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentFolderId = "all";
+    let currentFolderName = "全部資料夾";
+
+        function getSelectedIds() {
+            return Array.from(document.querySelectorAll(".record-checkbox:checked"))
+                .map(item => item.value);
+        }
+
+        function showAllFolders() {
+            currentFolderId = "all";
+            currentFolderName = "全部資料夾";
+
+            document.getElementById("currentFolderText").innerText = "目前位置：全部資料夾";
+            document.getElementById("folderGrid").style.display = "grid";
+
+            document.querySelectorAll(".history-record").forEach(card => {
+                card.style.display = "grid";
+            });
+    }
+
+        function openFolder(folderId, folderName) {
+            currentFolderId = folderId;
+            currentFolderName = folderName;
+
+            document.getElementById("currentFolderText").innerText = "目前位置：" + folderName;
+            document.getElementById("folderGrid").style.display = "none";
+
+            document.querySelectorAll(".history-record").forEach(card => {
+                if (card.dataset.folder === folderId) {
+                    card.style.display = "grid";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+    }
+
+        function openFolderModal() {
+            document.getElementById("folderModal").classList.add("show");
+        }
+
+        function closeFolderModal() {
+            document.getElementById("folderModal").classList.remove("show");
+        }
+
+        async function createFolder() {
+            const name = document.getElementById("newFolderName").value.trim();
+
+            if (!name) {
+                alert("請輸入資料夾名稱");
+                return;
+            }
+
+            const res = await fetch("/api/history/folders", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({name})
+            });
+
+            const data = await res.json();
+
+            if (data.ok) {
+                alert("資料夾已建立");
+                location.reload();
+            } else {
+                alert(data.message || "建立失敗");
+            }
+        }
+
+        async function deleteSelected() {
+            const ids = getSelectedIds();
+
+            if (ids.length === 0) {
+                alert("請先選取要刪除的紀錄");
+                return;
+            }
+
+            if (!confirm(`確定要刪除 ${ids.length} 筆紀錄嗎？`)) {
+                return;
+            }
+
+            const res = await fetch("/api/history/delete", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ids})
+            });
+
+            const data = await res.json();
+            alert(data.message || "已處理");
+            location.reload();
+        }
+
+        async function moveSelected() {
+            const ids = getSelectedIds();
+            const target_folder_id = document.getElementById("moveTarget").value;
+
+            if (ids.length === 0) {
+                alert("請先選取要搬移的紀錄");
+                return;
+            }
+
+            const res = await fetch("/api/history/move", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ids, target_folder_id})
+            });
+
+            const data = await res.json();
+            alert(data.message || "已處理");
+            location.reload();
+        }
+function downloadBlob(blob, filename) {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+
+    a.remove();
+    window.URL.revokeObjectURL(url);
+}
+
+
+function getDownloadFilenameFromResponse(response, fallbackName) {
+    const disposition = response.headers.get("Content-Disposition");
+
+    if (!disposition) {
+        return fallbackName;
+    }
+
+    const utf8Match = disposition.match(/filename\*=UTF-8''([^;]+)/);
+    if (utf8Match) {
+        return decodeURIComponent(utf8Match[1]);
+    }
+
+    const normalMatch = disposition.match(/filename="?([^"]+)"?/);
+    if (normalMatch) {
+        return normalMatch[1];
+    }
+
+    return fallbackName;
+}
+
+
+async function downloadSelectedRecords() {
+    const ids = getSelectedIds();
+
+    if (ids.length === 0) {
+        alert("請先選取要下載的紀錄");
+        return;
+    }
+
+    const res = await fetch("/api/history/download_report", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            type: "selected",
+            ids: ids
+        })
+    });
+
+    if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        alert(data.message || "下載失敗");
+        return;
+    }
+
+    const blob = await res.blob();
+    const fallback = ids.length === 1 ? "history_record.html" : "history_records.zip";
+    const filename = getDownloadFilenameFromResponse(res, fallback);
+
+    downloadBlob(blob, filename);
+}
+
+
+async function downloadCurrentFolder() {
+    if (currentFolderId === "all") {
+        alert("請先點進某一個資料夾，再下載整個資料夾。");
+        return;
+    }
+
+    const res = await fetch("/api/history/download_report", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            type: "folder",
+            folder_id: currentFolderId
+        })
+    });
+
+    if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        alert(data.message || "下載失敗");
+        return;
+    }
+
+    const blob = await res.blob();
+    const filename = getDownloadFilenameFromResponse(res, currentFolderName + ".zip");
+
+    downloadBlob(blob, filename);
+}
+async function clearCurrentFolderRecords() {
+    if (currentFolderId === "all") {
+        alert("請先點進某一個資料夾，再清空該資料夾內的紀錄。");
+        return;
+    }
+
+    if (!confirm(`確定要刪除「${currentFolderName}」內的所有檔案嗎？\n\n資料夾會保留，但裡面的歷史紀錄會被刪除。`)) {
+        return;
+    }
+
+    const res = await fetch("/api/history/folders/clear", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            folder_id: currentFolderId
+        })
+    });
+
+    const data = await res.json();
+
+    if (data.ok) {
+        alert(data.message || "已清空目前資料夾");
+        location.reload();
+    } else {
+        alert(data.message || "清空失敗");
+    }
+}
+async function deleteCurrentFolder() {
+    if (currentFolderId === "all") {
+        alert("請先點進某一個資料夾，再刪除資料夾。");
+        return;
+    }
+
+    if (currentFolderId === "default") {
+        alert("預設資料夾不能刪除。");
+        return;
+    }
+
+    if (!confirm(`確定要刪除資料夾「${currentFolderName}」嗎？\n\n注意：此操作會一併刪除此資料夾內所有歷史紀錄。`)) {
+        return;
+    }
+
+    const res = await fetch("/api/history/folders/delete", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            folder_id: currentFolderId
+        })
+    });
+
+    const data = await res.json();
+
+    if (data.ok) {
+        alert(data.message || "資料夾已刪除");
+        location.reload();
+    } else {
+        alert(data.message || "刪除資料夾失敗");
+    }
+}
+
+        showAllFolders();
+    </script>
+<div id="rawModal" class="raw-modal">
+    <div class="raw-modal-card">
+        <div class="raw-modal-head">
+            <h2>原始輸出資料</h2>
+            <button type="button" onclick="closeRawModal()">關閉</button>
+        </div>
+
+        <pre id="rawModalContent"></pre>
+    </div>
+</div>
+
+<script>
+    function openRawModal(rawId) {
+        const source = document.getElementById(rawId);
+        const modal = document.getElementById("rawModal");
+        const content = document.getElementById("rawModalContent");
+
+        if (!source || !modal || !content) {
+            alert("找不到原始資料");
+            return;
+        }
+
+        try {
+            content.textContent = JSON.parse(source.textContent);
+        } catch (err) {
+            content.textContent = source.textContent;
+        }
+
+        modal.classList.add("show");
+    }
+
+    function closeRawModal() {
+        document.getElementById("rawModal").classList.remove("show");
+    }
+</script>
+</body>
+</html>
