@@ -1,0 +1,282 @@
+READY gateway=127.0.0.1:5820 ctl=127.0.0.1:5821
+127.0.0.1 - - [13/Oct/2026 09:39:35] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:36] "POST /scan HTTP/1.1" 503 -
+127.0.0.1 - - [13/Oct/2026 09:39:36] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id=2beb0186002d47f9b0b354a871aa875b HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id=2beb0186002d47f9b0b354a871aa875b HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（2beb0186）
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id=2beb0186002d47f9b0b354a871aa875b HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id= HTTP/1.1" 400 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /scan HTTP/1.1" 409 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /__ctl/scan?scan_id=875d81e388844e68a6319c1b67ae70af HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id=b5b6b3433f5c4929b59898f4898dec06 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id=b5b6b3433f5c4929b59898f4898dec06 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（b5b6b343）
+127.0.0.1 - - [13/Oct/2026 09:39:47] "GET /status?scan_id=b5b6b3433f5c4929b59898f4898dec06 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:48] "GET /status?scan_id=2a6747adecb34cfebb2a5ea4b24f3fb1 HTTP/1.1" 200 -
+[Scan] TEST 完成：未熟（2a6747ad）
+127.0.0.1 - - [13/Oct/2026 09:39:48] "GET /status?scan_id=2a6747adecb34cfebb2a5ea4b24f3fb1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "GET /status?scan_id=b5b6b3433f5c4929b59898f4898dec06 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "POST /bad/noid/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "POST /bad/html/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:48] "GET /status?scan_id=0c8c520db2b147db80aef6050ec7bbf2 HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（0c8c520d）
+127.0.0.1 - - [13/Oct/2026 09:39:49] "GET /status?scan_id=0c8c520db2b147db80aef6050ec7bbf2 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:49] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:49] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:49] "GET /status?scan_id=aa8c43eccf08463687c301a2868129f0 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（aa8c43ec）
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /status?scan_id=aa8c43eccf08463687c301a2868129f0 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /status?scan_id=a63ff6919d7042f5824ad78eed70fab3 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /status?scan_id=b3a291ce5d464bca9d045937add861cd HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /status?scan_id=f865e7f8485d4341b4ef537f21a4ede3 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /status?scan_id=2473d02ac41c47bb86bc71a439125a9b HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /status?scan_id=643279d6f19a4478aa8faaeb052bb4bb HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:51] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:53] "GET /status?scan_id=cec7099e40e549e29bb446753e9b6fd3 HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:53] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /bad/fakedone/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "GET /status?scan_id=4657b7a332f5400c9b1741d9b4245134 HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:54] "GET /status?scan_id=4657b7a332f5400c9b1741d9b4245134 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（4657b7a3）
+127.0.0.1 - - [13/Oct/2026 09:39:54] "GET /status?scan_id=4657b7a332f5400c9b1741d9b4245134 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:54] "POST /calibrate HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:56] "GET /status?scan_id=c08bf2bc0ada4d1092a9c10c5e7e54d6 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:56] "GET /__ctl/history?kind=CALIBRATION HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /status?scan_id=8507d668740f414ca0e8838fca1d5112 HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+[Scan] TEST 完成：初熟（8507d668）127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /status?scan_id=8507d668740f414ca0e8838fca1d5112 HTTP/1.1" 200 -
+
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /__ctl/history?kind=UPLOAD_TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /__ctl/history?kind=UPLOAD_FORMAL HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /scan_records HTTP/1.1" 409 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /__ctl/history?kind=UPLOAD_FORMAL HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /status?scan_id=a120e17b91a041139de55a08a8a84c31 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:57] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /bad/oldver/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:39:58] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "GET /status?scan_id=a44a1a09c66f4320abc81fddbba6baf9 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（a44a1a09）
+127.0.0.1 - - [13/Oct/2026 09:39:58] "GET /status?scan_id=a44a1a09c66f4320abc81fddbba6baf9 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:58] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:39:59] "POST /scan HTTP/1.1" 503 -
+127.0.0.1 - - [13/Oct/2026 09:39:59] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:01] "GET /ping HTTP/1.1" 404 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /scan HTTP/1.1" 503 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=6e72d6b9d7c847cf9a55ac265e53e170 HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=6e72d6b9d7c847cf9a55ac265e53e170 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（6e72d6b9）
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=6e72d6b9d7c847cf9a55ac265e53e170 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id= HTTP/1.1" 400 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /scan HTTP/1.1" 409 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /__ctl/scan?scan_id=678cffd23634455ba17a0b5e2a17217e HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=6817b189965e4ddead9e1c49607c4eee HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=6817b189965e4ddead9e1c49607c4eee HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（6817b189）
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=6817b189965e4ddead9e1c49607c4eee HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:47] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:47] "GET /status?scan_id=a2423975e6d245cf8eb82e7c8ba73dd7 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:48] "GET /status?scan_id=a2423975e6d245cf8eb82e7c8ba73dd7 HTTP/1.1" 200 -
+[Scan] TEST 完成：未熟（a2423975）
+127.0.0.1 - - [13/Oct/2026 09:40:48] "GET /status?scan_id=a2423975e6d245cf8eb82e7c8ba73dd7 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:48] "GET /status?scan_id=6817b189965e4ddead9e1c49607c4eee HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:48] "POST /bad/noid/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:48] "POST /bad/html/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:48] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:48] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:48] "GET /status?scan_id=1e8219ade0f04c8cb0f78ea7a30d9189 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（1e8219ad）
+127.0.0.1 - - [13/Oct/2026 09:40:49] "GET /status?scan_id=1e8219ade0f04c8cb0f78ea7a30d9189 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:49] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:49] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:49] "GET /status?scan_id=bdd9d15516514644a4e472d3913d76d8 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（bdd9d155）
+127.0.0.1 - - [13/Oct/2026 09:40:51] "GET /status?scan_id=bdd9d15516514644a4e472d3913d76d8 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:51] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:51] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:51] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:51] "GET /status?scan_id=721e565152644bfaaf227e0ebf689429 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /status?scan_id=721e565152644bfaaf227e0ebf689429 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /status?scan_id=88dbd17cd25e451e8609d21718e81c28 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /status?scan_id=7f7f224512d543aebd6e932536c6fd8f HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:52] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0127.0.0.1 - - [13/Oct/2026 09:40:52] "GET /status?scan_id=5a146eaa537d4211b54f5be1fb031860 HTTP/1.1" 200 -
+
+127.0.0.1 - - [13/Oct/2026 09:40:54] "GET /status?scan_id=5a146eaa537d4211b54f5be1fb031860 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:54] "GET /status?scan_id=25c6480d39c0465e86dc87bb4ca31c65 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:54] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:55] "GET /status?scan_id=fa841ea9196541768967ecba36cbc981 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:55] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /bad/fakedone/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:57] "GET /status?scan_id=0417d71f00cd434f998acd14f6c0828f HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（0417d71f）127.0.0.1 - - [13/Oct/2026 09:40:57] "GET /status?scan_id=0417d71f00cd434f998acd14f6c0828f HTTP/1.1" 200 -
+
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:57] "POST /calibrate HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:40:59] "GET /status?scan_id=1c2b214845284c9bbc9c492ccd8045be HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:40:59] "GET /__ctl/history?kind=CALIBRATION HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /status?scan_id=379e5169ea324a1cba4079896266f3fc HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /status?scan_id=379e5169ea324a1cba4079896266f3fc HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（379e5169）
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /status?scan_id=379e5169ea324a1cba4079896266f3fc HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /__ctl/history?kind=UPLOAD_TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /__ctl/history?kind=UPLOAD_FORMAL HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /scan_records HTTP/1.1" 409 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /__ctl/history?kind=UPLOAD_FORMAL HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /status?scan_id=5759b2e8606d4186840632fc9f2063ec HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /__ctl/serial_state HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:00] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /cancel HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "GET /__ctl/history?kind=FAILED HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /__ctl/gate HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "GET /__ctl/history?kind=TEST HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /bad/oldver/scan HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /__ctl/serial HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /scan HTTP/1.1" 200 -
+[Serial] 使用 port：FAKE0
+127.0.0.1 - - [13/Oct/2026 09:41:01] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:01] "GET /status?scan_id=b76743a2bbc8423eb66238f6ac9a7816 HTTP/1.1" 200 -
+[Scan] TEST 完成：初熟（b76743a2）127.0.0.1 - - [13/Oct/2026 09:41:01] "GET /status?scan_id=b76743a2bbc8423eb66238f6ac9a7816 HTTP/1.1" 200 -
+
+127.0.0.1 - - [13/Oct/2026 09:41:01] "POST /__ctl/reset HTTP/1.1" 200 -
+127.0.0.1 - - [13/Oct/2026 09:41:02] "POST /scan HTTP/1.1" 503 -
+127.0.0.1 - - [13/Oct/2026 09:41:02] "POST /__ctl/reset HTTP/1.1" 200 -

@@ -1,0 +1,256 @@
+{
+ "release_id": "pinenose-rc-6a-973be8bb",
+ "status": "SOFTWARE RELEASE CANDIDATE — MATURITY INFERENCE NOT APPROVED",
+ "source_commit": "973be8bbef2d0b9ad70afc96757b902a002618de",
+ "source_commit_date": "2026-10-13T14:26:30+08:00",
+ "source_branch": "analysis/step6-release-packaging",
+ "step5_acceptance_commit": "2b4a1df2273635caab481d130791716f2f099289",
+ "api_contract_version": "2.1",
+ "feature_schema_id": "FIXED11-C2-W0/sha256:2390924767fbb127",
+ "components": {
+  "RELEASE_NOTICE.txt": {
+   "sha256": "8f4f707b1d8b91f18e34496325e9fbd7081be75d0e023822cd08485277f5d377",
+   "source": "generated",
+   "git_blob": null,
+   "crlf_normalized_to_lf": false
+  },
+  "VERSION.json": {
+   "sha256": "c4ba944a8fc3914003f5511f46fc0c0e4858973e352bd354a68b84b5b2565cdc",
+   "source": "generated",
+   "git_blob": null,
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_app_gateway/app_gateway_v2.py": {
+   "sha256": "ba59e1f1bc68a92b246746303e434a6653e9943a7755289cdb7f3a2d606a54be",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_app_gateway/app_gateway_v2.py",
+   "git_blob": "3ed295540f645bbdd0158f89cd4ff2eb4f240694",
+   "crlf_normalized_to_lf": true
+  },
+  "app/pineapple_final/app_local.py": {
+   "sha256": "6ce43b1a24fa447b2bec74c967ecb2fd787a1861aa9a3e561db3fb0dde9011d3",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/app_local.py",
+   "git_blob": "2087385116dbb2334334607ce79d939d2f11a723",
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_final/calibrate_air_30s.py": {
+   "sha256": "f4e91c28033d12b7fe93a508fbe16d674aecca9c736fdce6100132ac11665d0a",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/calibrate_air_30s.py",
+   "git_blob": "136896aa6473a7f2d97e9257a490ba106fb4adef",
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_final/deploy_meta.json": {
+   "sha256": "56d90f79c777b994e8e4f54152a50384b21d66b04da892d276cc4f32a558a9ae",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/deploy_meta.json",
+   "git_blob": "07eb94897e230cc42b64b35b02fbda4e9023598d",
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_final/feature_columns.json": {
+   "sha256": "1e4e2b5326c8c8ab2d00cd19de4799e1d13017460d8c726affbd26cde1fdf46e",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/feature_columns.json",
+   "git_blob": "ccefab37fa3d71398852f1d0cebc674cfdcbb070",
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_final/inference_30s.py": {
+   "sha256": "0eb6fdbf6d2541bd1c7f37cb1086811ddea9f4ab9611586f0603709de125d1c2",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/inference_30s.py",
+   "git_blob": "ddd1f0bbaad166cd9a8397c54b358572bd10dcc3",
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_final/model_registry.json": {
+   "sha256": "8111698e68922371a8861ef8101911776da061cbf2a52f5a76ce9997375f1a50",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/model_registry.json",
+   "git_blob": "81657ee9a9c77014cb236900debf669d3d74ee81",
+   "crlf_normalized_to_lf": false
+  },
+  "app/pineapple_final/pinenose_safety.py": {
+   "sha256": "dd69114dbb0ba32b8975c86d86b264df6518f2811e7af41631724090b99fa1cd",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/pinenose_safety.py",
+   "git_blob": "15da9eaf6f9a2856f384b3fe582d036eaa4e54ea",
+   "crlf_normalized_to_lf": false
+  },
+  "app/unified_web/app.py": {
+   "sha256": "beabfa7909a38a03226e1ed12e4bf085b8c1cc12708cbee15e8d990f3eb5574e",
+   "source": "Semester 2 Final Exam (三下-期末)/整合網頁/pineapple_unified_web/app.py",
+   "git_blob": "d1b950a85d2be551329ec38bc755b27d9780ddf3",
+   "crlf_normalized_to_lf": false
+  },
+  "app/unified_web/static/style.css": {
+   "sha256": "c2d5cecdac8dadb41147bc393b67a1097ea2362bedc2b08933af77b9f1db32d4",
+   "source": "Semester 2 Final Exam (三下-期末)/整合網頁/pineapple_unified_web/static/style.css",
+   "git_blob": "8a743ec03cbf8311dabf38333ae7ba33f3759f6b",
+   "crlf_normalized_to_lf": false
+  },
+  "app/unified_web/templates/index.html": {
+   "sha256": "f9dd6236bf226315e07992ac8be3a76f7fd7455198c7e02587267236a5e075de",
+   "source": "Semester 2 Final Exam (三下-期末)/整合網頁/pineapple_unified_web/templates/index.html",
+   "git_blob": "ea2b752cd0706f751cd763ce57c5dce6f46db15f",
+   "crlf_normalized_to_lf": false
+  },
+  "config/model_registry.engineering.template.json": {
+   "sha256": "47ecf3b5117dc89af4bc5bf7a6057de502f96a0ad477e881e9e2dfd0b85ce27b",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/config/model_registry.engineering.template.json",
+   "git_blob": "9b9ac29d79aa8283d465ab6ac09dc7dd9934108c",
+   "crlf_normalized_to_lf": false
+  },
+  "config/model_registry.formal.template.json": {
+   "sha256": "38c412413255fb47cef309c1452909acc384f1f09fcba40d7e82098ad37ddc90",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/config/model_registry.formal.template.json",
+   "git_blob": "3efab80c89526f57f3271e75f229886e385be64e",
+   "crlf_normalized_to_lf": false
+  },
+  "config/profile.engineering.template.json": {
+   "sha256": "af78dbddc7b970c3b94e6bdf76bc479452b0339153a643cedad088badac91b83",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/config/profile.engineering.template.json",
+   "git_blob": "7d695ae8aa5bfc7f03f4055f5c0287a3989d8b1e",
+   "crlf_normalized_to_lf": false
+  },
+  "config/profile.formal.template.json": {
+   "sha256": "3ddff019eff145cee372786bbed25215ecfdf0b9d7cb1f76c07f1f1a81f25dea",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/config/profile.formal.template.json",
+   "git_blob": "c927b609c1911f20026302a14497a1bb9bb9e488",
+   "crlf_normalized_to_lf": false
+  },
+  "config/runtime.engineering.template.json": {
+   "sha256": "c9b62fd332adf7a00ab123021eae1ca8982101cf44fc1bdcf4a7017e187fc231",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/config/runtime.engineering.template.json",
+   "git_blob": "7dc9304865bf3d4d5ad7d74afd815cee24534eed",
+   "crlf_normalized_to_lf": false
+  },
+  "config/runtime.formal.template.json": {
+   "sha256": "f0e2c56c7cc672010a241df2def69760fb6d7f6f925a5b61bb013e9f8b7edf83",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/config/runtime.formal.template.json",
+   "git_blob": "3557059d268794ab7f5fc405c0079ba20b5af235",
+   "crlf_normalized_to_lf": false
+  },
+  "docs/OPERATIONS.md": {
+   "sha256": "1ceb0726253954c6a500fcf13c2428ac00532e268b526be96dbba394a799c2ef",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/docs/OPERATIONS.md",
+   "git_blob": "55850a8bb5f59092fe3392920c862ee90b59057d",
+   "crlf_normalized_to_lf": false
+  },
+  "docs/deployment_preflight_checklist.md": {
+   "sha256": "27a9b6ce4bb46b8ff082cbcfbe4de04bbdbdd702fc5060ad946ab8e08b74a4a8",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/docs/deployment_preflight_checklist.md",
+   "git_blob": "a7666c6bac5fa3e118700fd321bb70c9f759d1d8",
+   "crlf_normalized_to_lf": false
+  },
+  "firmware/use_this.ino": {
+   "sha256": "4a459c1c17b5761d146f43e19c5744cac3e04cf60e73a1d3c429a10f38cf7a35",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_deployment_system/use_this/use_this.ino",
+   "git_blob": "317125c0ecb67b9d0888e1c541d6bdcc38231a38",
+   "crlf_normalized_to_lf": false
+  },
+  "ops/pinenose_backup.py": {
+   "sha256": "58c61a19d8c74a33dfd9961f20157a015fa5bb7738f8d565b45468fc9df94093",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/ops/pinenose_backup.py",
+   "git_blob": "07c2dd783442a2208e43670009a495edec34ee41",
+   "crlf_normalized_to_lf": false
+  },
+  "ops/pinenose_service.py": {
+   "sha256": "1bd54d1b16428f5c878f718ad0d4a65044248841172db87c097171bb8ef3fb46",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/ops/pinenose_service.py",
+   "git_blob": "a1154e424726d3c0ecc0add3ccae3f9b4b4d4da0",
+   "crlf_normalized_to_lf": false
+  },
+  "ops/rpi3_preflight.py": {
+   "sha256": "3604f2381a7aadf995b32f951abbc33c95f91b2ac18db22f6546e53f8243c60e",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/ops/rpi3_preflight.py",
+   "git_blob": "e881b8391e29d65742df0d42e0d6d84f768489eb",
+   "crlf_normalized_to_lf": false
+  },
+  "release_layout.json": {
+   "sha256": "a1be8f48168a81e32d288e2c694c50907969d5cac6d04b4cdeab0a0324eb1e2f",
+   "source": "generated",
+   "git_blob": null,
+   "crlf_normalized_to_lf": false
+  },
+  "requirements/requirements_release.txt": {
+   "sha256": "ffb0b29546ec0a4bede5402e3a93053e253bff07a0c7cdfebf6f64beaaf95b5c",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/requirements_release.txt",
+   "git_blob": "649b7070e9dbf6408aac08ad019543036fb448d0",
+   "crlf_normalized_to_lf": false
+  },
+  "requirements/requirements_rpi.txt": {
+   "sha256": "f415b6d99802c0128ece45de4450e4730daba5e6459ada547a33d42f58c0d18e",
+   "source": "Semester 2 Final Exam (三下-期末)/pineapple_final/requirements_rpi.txt",
+   "git_blob": "70e4442dc507025261b7fdcd6e0f219846f12455",
+   "crlf_normalized_to_lf": false
+  },
+  "start_pineapple_system.sh": {
+   "sha256": "855a0fc51bed92ad21562acae51724e2e430e6435dc27ec1ad4ba230a94c1b01",
+   "source": "Semester 2 Final Exam (三下-期末)/整合網頁/start_pineapple_system.sh",
+   "git_blob": "131a2210fff0efb602b7f0645e0aadb3208719fe",
+   "crlf_normalized_to_lf": false
+  },
+  "status_pineapple_system.sh": {
+   "sha256": "952ced0c1e93b40cdfac915082f6e92f185077101016c75e449cc69a74159233",
+   "source": "Semester 2 Final Exam (三下-期末)/pinenose_release/status_pineapple_system.sh",
+   "git_blob": "1767c5f3ae27035609cd05b70ab406687d0d2fd6",
+   "crlf_normalized_to_lf": false
+  },
+  "stop_pineapple_system.sh": {
+   "sha256": "c57f9b3c4ff75e3c54ac620157d0be1aa3cd9018f1fa0684b52e7dd6699d3668",
+   "source": "Semester 2 Final Exam (三下-期末)/整合網頁/stop_pineapple_system.sh",
+   "git_blob": "56e5701368ec8716697a4d11eee6b0ded308c392",
+   "crlf_normalized_to_lf": false
+  }
+ },
+ "line_endings": "text files normalized to LF at build time (content otherwise identical to the git blob)",
+ "entry_points": {
+  "release_id": "pinenose-rc-6a-973be8bb",
+  "gateway": "app/pineapple_app_gateway/app_gateway_v2.py",
+  "web": "app/pineapple_final/app_local.py",
+  "unified": "app/unified_web/app.py",
+  "safety": "app/pineapple_final/pinenose_safety.py",
+  "note": "Only these entry points are ever started by ops/pinenose_service.py. Gateway v1 (app_gateway.py) is not part of this release."
+ },
+ "apps": {
+  "consumer": {
+   "path": "app/Consumer_pineapple-ripeness-main/expo",
+   "app_version": "1.0.0",
+   "slug": "copiedpineapple-ripeness",
+   "package_lock_sha256": "22b6a85770b581df626a16e6b64a1280c6a295bf5e0fa709b2578691c1ead0da",
+   "expo": "54.0.34",
+   "react_native": "0.81.5",
+   "react": "19.1.0",
+   "typescript": "5.9.3",
+   "expects_api_version": "2.1"
+  },
+  "farmer": {
+   "path": "app/Farmer_pineapple-ripeness-main",
+   "app_version": "1.0.0",
+   "slug": "farmer-pineapple-ripeness",
+   "package_lock_sha256": "e7e99c0aa1cd6e1e26c0b8901dc066fa12c9aa3511ca3906bf955c8682a7aa60",
+   "expo": "54.0.37",
+   "react_native": "0.81.5",
+   "react": "19.1.0",
+   "typescript": "5.9.3",
+   "expects_api_version": null,
+   "note": "Farmer App has no scan contract with the Gateway (scan refuses with FARMER_SENSOR_NOT_CONNECTED)"
+  }
+ },
+ "excluded": [
+  "all .pkl models (none approved; engineering models are mounted read-only from outside)",
+  "raw xlsx / labels / demo_data / training data",
+  "AIR files and scan history",
+  "runtime configs with real values / .env / credentials",
+  "Gateway v1 (app_gateway.py)",
+  "app source trees and node_modules",
+  "git history"
+ ],
+ "python_requirements": "requirements/requirements_release.txt",
+ "untested": [
+  "Raspberry Pi 3 hardware and OS",
+  "real Arduino serial",
+  "native Android/iOS builds",
+  "real AIR calibration and AIR expiry"
+ ],
+ "artifact": {
+  "file": "pinenose-rc-6a-973be8bb.tar.gz",
+  "local_path": "C:\\Users\\user\\enose-step6-release-packaging\\release_artifacts\\pinenose-rc-6a-973be8bb.tar.gz",
+  "size_bytes": 93516,
+  "sha256": "db468b9677fc28b246f4bcc2eaeee596b73155f98fc1a3548df0a444c24c0383",
+  "external_checksum_file": "pinenose-rc-6a-973be8bb.tar.gz.sha256",
+  "note": "artifact kept in git-ignored release_artifacts/ (not committed)"
+ }
+}

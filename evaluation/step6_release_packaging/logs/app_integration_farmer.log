@@ -1,0 +1,8 @@
+[PASS] APP-F01 Farmer services/api.startScan：拋出 FARMER_SENSOR_NOT_CONNECTED（無 mock、無隨機、無預設值） — FARMER_SENSOR_NOT_CONNECTED
+[PASS] APP-F02 Farmer pingServer 對真實 Gateway：Gateway 沒有 /ping → false（Farmer 與 Gateway 沒有可用的掃描契約） — pingServer(http://127.0.0.1:5820) → false
+react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+[PASS] APP-F03 Farmer 批次掃描畫面：按下掃描 → 提示「無法掃描」，不建立樣本、不顯示成熟度／糖度／風險／信心值 — alert=["無法掃描"] samples=0 screen notice shown=true
+react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+[PASS] APP-F04 Farmer 批次摘要：沒有樣本時平均糖度顯示「—」，不顯示 0.0 Brix — summary shows —=true shows 0.0=false
+farmer: 4/4 PASS

@@ -1,0 +1,53 @@
+package C:\Users\user\enose-step6-release-packaging\release_artifacts\pinenose-rc-6a-973be8bb.tar.gz (93516 bytes)
+[PASS] P01-PACKAGE-SHA256 套件 SHA-256 與外部 .sha256 相符 — sha256 db468b9677fc28b246f4bcc2eaeee596b73155f98fc1a3548df0a444c24c0383 == .sha256 file: True
+[PASS] P02-REPRODUCIBLE-BUILD 以相同 commit 重新建置得到逐位元相同的套件 — rebuild from 973be8bbef → identical bytes: True
+[PASS] P03-NO-MODEL-DATA-SECRETS 套件不含模型、原始資料、AIR／歷史、Gateway v1、憑證或本機路徑 — 48 entries, 303778 bytes uncompressed; forbidden=[]; secret-pattern hits=[]; local absolute paths=[]
+[PASS] P04-RC-LABEL 套件標示 SOFTWARE RELEASE CANDIDATE — MATURITY INFERENCE NOT APPROVED，核准清單為空 — status='SOFTWARE RELEASE CANDIDATE — MATURITY INFERENCE NOT APPROVED'; source_commit=973be8bbef; registry models={}; api=2.1
+[PASS] P05-INSTALL 以套件內 pinenose_backup.py 驗證 SHA-256 後安裝並切換 current_release — ['[OK] installed pinenose-rc-6a-973be8bb；SHA256SUMS 全部相符（尚未切換 current_release）', '[DO] current_release: None → pinenose-rc-6a-973be8bb']
+[PASS] P06-NO-HIDDEN-CONFIG 解壓後沒有隱藏設定：沒有 profile 時明確失敗（不讀 worktree 或環境中的設定） — SHA256SUMS 34 entries; check without profile → exit 2: [FAIL] PROFILE_MISSING: C:\Users\user\AppData\Local\Temp\s6a\site_formal\site\missing.json 不存在
+[PASS] P07-PREFLIGHT-READONLY rpi3_preflight.py 在全新站點可執行、唯讀（不建立任何檔案）、不輸出秘密（非 Pi 主機的 FAIL 項目為預期） — exit 0 (FAIL lines expected off-target: []); read-only (no files created)=True
+[PASS] S01-NORMAL-START 正常啟動（套件 start 腳本）：3 個服務、PID 檔、健康檢查；正式範本 → 掃描依設計停用 — exit 0 in 5.0s; pids={'gateway': 25736, 'web': 4568, 'unified': 39388}; health release=pinenose-rc-6a-973be8bb api=2.1; module=C:\Users\user\AppData\Local\Temp\s6a\site_formal\releases\pinenose-rc-6a-
+[PASS] S02-REPEATED-START 重複啟動：不產生第二組程序（SKIP），PID 不變 — exit 0; same PIDs=True; skips=3
+[PASS] F01-FORMAL-TEMPLATE-SCAN-DISABLED 正式範本（AIR 期限未設定）：服務在線、掃描以 AIR_MAX_AGE_NOT_CONFIGURED 拒絕，網頁可用 — /health 200 config_error=AIR_MAX_AGE_NOT_CONFIGURED; /scan 503 AIR_MAX_AGE_NOT_CONFIGURED; web / 200; unified / 200 (iframe not configured, no hard-coded IP)
+[PASS] S04-HEALTH-NOT-A-FAULT 健康檢查：設定性停用（未核准／未設定期限）回報為 RUNNING，不誤稱軟體故障（exit 0） — [OK] gateway HTTP 200: RUNNING — SCAN DISABLED BY CONFIGURATION (AIR_MAX_AGE_NOT_CONFIGURED); api_version=2.1 release=pinenose-rc-6a-973be8bb | [OK] web HTTP 200 | [OK] unified HTTP 200
+[PASS] S05-NORMAL-STOP 正常停止：優雅結束、PID 檔移除、服務埠釋放；外部同名程序（app.py 等）不受影響 — exit 0 in 2.1s; processes gone=True; pidfiles left={}; graceful=True; external same-name processes alive=True
+[PASS] S06-REPEATED-STOP 重複停止：安全（not_running），exit 0 — exit 0: [OK] unified: not_running | [OK] web: not_running | [OK] gateway: not_running
+[PASS] S07-PORT-IN-USE 服務埠被占用：明確失敗（exit 3, PORT_IN_USE），不啟動任何服務 — exit 3; started nothing=True; [FAIL] PORT_IN_USE：gateway 需要 127.0.0.1:5001，但已被其他程序使用；未啟動任何服務
+[PASS] S08-CONFIG-MISSING 設定缺失或錯誤（profile／runtime／核准清單／模式不符／正式清單混入工程模型）→ exit 2，不啟動 — [('profile missing', 2, 'PROFILE_MISSING', False), ('runtime config missing', 2, 'RUNTIME_CONFIG_MISSING', False), ('model registry missing', 2, 'MODEL_REGISTRY_MISSING', False), ('runtime mode mismat
+[PASS] S09-ABNORMAL-EXIT 異常結束：狀態顯示 stale；再次啟動清除過期 PID 檔並只重啟該服務 — after crash status: ['gateway: stale (dead) PID 20508 http://127.0.0.1:5001 release pinenose-rc-6a-973be8bb']; restart exit 0: cleaned stale pidfile, web kept PID 28060, new gateway PID 12996
+[PASS] S10-PID-REUSE PID 檔指向外部同名程序（PID 重用）：停止工具辨識身分不符，不終止外部程序 — stop with PID file pointing at external app_gateway_v2.py → ['[OK] gateway: pid_reused_not_killed']; external alive=True
+[PASS] S11-STALE-PID 過期 PID（程序已不存在）：移除 PID 檔，不終止任何程序 — ['[OK] unified: stale_pidfile_removed', '[OK] web: stale_pidfile_removed', '[OK] gateway: stale_pidfile_removed']
+[PASS] S12-FORCED-STOP-OWNED-ONLY 強制停止（逾時 0）：只結束本套件擁有的程序樹，外部同名程序存活 — forced stop: [OK] unified: forced | [OK] web: forced | [OK] gateway: forced; own processes gone=True; external alive=True
+[PASS] S13-WRONG-GATEWAY-BLOCKED 無法啟動錯誤 Gateway：v1 被放到 v2 位置 → 完整性失敗；舊 start_server.sh 拒絕執行；套件不含 v1 — [('v1 copied over v2', 2, True, False), ('legacy start_server.sh (ngrok)', 1, True, False)]; package contains app_gateway.py=False; layout gateway=app/pineapple_app_gateway/app_gateway_v2.py
+[PASS] S14-NETWORK-RULES 網路規則：拒絕 0.0.0.0、公網 IP、主機名稱、未授權區網、區網用 localhost iframe、重複埠；明確的私有區網設定可通過檢查（不實際綁定） — rejected: [('0.0.0.0', 2, True), ('public IP', 2, True), ('LAN IP without lan_access', 2, True), ('hostname', 2, True), ('localhost iframe for LAN', 2, True), ('duplicate ports', 2, True)]; explicit p
+[PASS] F02-FORMAL-MODEL-BLOCKING 正式模式（核准清單空、測試專用 AIR 期限）：校正可用；成熟度推論 503 MODEL_NOT_APPROVED；前端不能切換到工程 — start exit 0: ['[OK] gateway HTTP 200: RUNNING — MATURITY INFERENCE NOT APPROVED (MODEL_NOT_APPROVED); non-model functions available; api_version=2.1 release=pinenose-rc-6a-973be8bb']; calibrate (non-
+[PASS] F03-NO-FALLBACK-MODEL 正式模式沒有載入任何模型（無舊模型 fallback） — formal /health: model_loaded=False model_sha256=None model_error=MODEL_NOT_APPROVED (no fallback to any old model)
+[PASS] E01-ENGINEERING-MODEL-CHECKS 工程模型必須：檔案存在、SHA-256 相符、唯讀、在清單登記為 engineering；工程 profile 不得開放區網 — [('writable model', 2, True, False), ('wrong sha256', 2, True, False), ('not registered', 2, True, False), ('registered as approved', 2, True, False), ('missing model file', 2, True, False), ('enginee
+[PASS] E02-ENGINEERING-START 工程 profile 啟動（唯讀模型、SHA-256 相符、本機） — [OK] web HTTP 200
+  replay 10/99
+  replay 20/99
+  replay 30/99
+  replay 40/99
+  replay 50/99
+  replay 60/99
+  replay 70/99
+  replay 80/99
+  replay 90/99
+[PASS] E03-PACKAGE-REPLAY 經解壓套件的實際 HTTP 服務入口重播 99 個水果日：TEST 標記、Stage 與 Step 5 驗收結果相同、機率 ≤5e-7 — 99/99 fruit-days: TEST label, stage == Step 5 accepted stage, max |Δp| vs Step 5 reference = 0.0e+00
+[PASS] E04-WEB-PATH 網頁路徑（本機模式執行同一支 CLI）：校正與推論成功，Stage 與 Step 5 相同，顯示 TEST — web /air → AIR mode=engineering; web /infer (local CLI) → Stage 1 (Step 5: 1); TEST banner=True
+[PASS] E05-CROSS-PROCESS-DEVICE-LOCK 跨程序感測器互斥：Gateway 掃描中，網頁 CLI 回 DEVICE_BUSY（不同時讀同一個 Arduino） — web CLI while Gateway holds the sensor → DEVICE_BUSY=True; gateway scan then cancelled → cancelled
+[PASS] E06-INVALID-SCANS 無效掃描（ADC NaN、無 header、資料不足、序列埠開啟失敗、過期／損毀／demo AIR）→ failed，沒有成熟度 — [('ADC NaN', 'failed', 'ADC_INVALID'), ('no CSV header', 'failed', 'SERIAL_HEADER_TIMEOUT'), ('only 20 rows', 'failed', 'INSUFFICIENT_ROWS'), ('serial open fails', 'failed', 'SCAN_ERROR'), ('stale AIR
+[PASS] E07-CANCEL 掃描中取消（含重複取消）：cancelled、序列埠被關閉、沒有結果 — cancel → cancelled; repeated cancel → already=True; serial events after scan start=['open', 'close']
+[PASS] E08-TIMEOUT 序列埠讀取卡住：Gateway 期限到時 timed_out，結果作廢 — stuck serial read → timed_out/SCAN_TIMEOUT after 65s (real Gateway deadline)
+[PASS] E09-MODEL-ERROR 模型錯誤（核准清單的特徵順序不符）：服務在線但回報 MODEL ERROR，掃描 503 — registry feature order wrong → health '['[OK] gateway HTTP 200: RUNNING — MODEL ERROR (MODEL_FEATURE_MISMATCH); api_version=2.1 release=pinenose-rc-6a-973be8bb']'; /scan 503 MODEL_FEATURE_MISMATCH
+[PASS] D01-TEST-FORMAL-SEPARATION TEST 結果只在工程資料夾；正式資料夾沒有任何結果歷史；失敗只寫入 scan_failures（stage=None） — engineering history_test lines=99 (all TEST); failure records=10 (stage=None); engineering history_formal exists=False; formal data files=['air_calibrations.jsonl']
+[PASS] D02-APPEND-ONLY-ACROSS-RESTART 重啟後歷史保留：既有內容不變，新紀錄只追加 — restart then one scan: previous 227387 bytes preserved as prefix, appended 2324 bytes
+[PASS] D03-DATA-ROOT-BINDING 資料夾與 profile 綁定：正式 profile 不能使用工程資料夾（反之亦然） — formal profile pointed at the engineering data folder → exit 2 [FAIL] DATA_ROOT_PROFILE_MISMATCH: C:\Users\user\AppData\Local\Temp\s6a\site_engineering\data\engineering 屬於 engineering
+[PASS] S15-NO-LEFTOVER-PROCESSES 全部停止後：沒有殘留本套件程序或 PID 檔，服務埠全部釋放；外部同名程序仍存活 — pid files left=[]; all package ports free=True; external same-name processes alive=True; __pycache__ in release dirs=[]
+
+package tests: 36/36 PASS; 770s; package pinenose-rc-6a-973be8bb.tar.gz
+
+real	12m51.635s
+user	0m0.015s
+sys	0m0.000s
+package_tests exit=0

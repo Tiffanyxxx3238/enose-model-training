@@ -1,0 +1,5 @@
+Dependency validation is unreliable in offline-mode
+The following packages should be updated for best compatibility with the installed expo version:
+  expo-speech@55.0.18 - expected version: ~14.0.8
+Your project may not work correctly until you install the expected versions of the packages.
+Found outdated dependencies

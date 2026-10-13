@@ -1,0 +1,33 @@
+Starting Metro Bundler
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 42/140)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓░░░░░░░░░░░░ 29.8% (219/401)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.3% (478/629)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 82.4% (743/822)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.4% ( 856/2435)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.4% (1490/2440)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.4% (2104/2440)
+Web Bundled 27068ms ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js (2472 modules)
+Web ..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (2472/2472)
+
+› Assets (18):
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\@react-navigation\elements\lib\module\assets\back-icon-mask.0a328cd9c1afd0afe8e3b1ec5165b1b4.png (653 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\@react-navigation\elements\lib\module\assets\back-icon.35ba0eaec5a4f5ed12ca16fabeae451d.png (207 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\@react-navigation\elements\lib\module\assets\clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55.png (4 variations | 425 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\@react-navigation\elements\lib\module\assets\close-icon.808e1b1b9b53114ec2838071a7e6daa7.png (4 variations | 235 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\@react-navigation\elements\lib\module\assets\search-icon.286d67d3f74808a60a78d3ebf1a5fb57.png (928 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\arrow_down.017bc6ba3fc25503e5eb5e53826d48a8.png (9.46 kB)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\error.d1ea1496f9057eb392d5bbf3732a61b7.png (469 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\file.19eeb73b9593a38f8e9f418337fc7d10.png (138 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\forward.d8b800c443b8972542883e0b9de2bdc6.png (188 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\pkg.ab19f4cbc543357183a20571f68380a3.png (364 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\sitemap.412dd9275b6b48ad28f5e3d81bb1f626.png (465 B)
+..\..\..\..\..\enose-step6-release-packaging\Semester 2 Final Exam (三下-期末)\app\Farmer_pineapple-ripeness-main\node_modules\expo-router\assets\unmatched.20e71bdf79e3a97bf55fd9e164041578.png (4.75 kB)
+
+› web bundles (1):
+_expo/static/js/web/entry-1dd6ea59209b65ef5e762f5d832131e8.js (3.24 MB)
+
+› Files (2):
+index.html (1.19 kB)
+metadata.json (49 B)
+
+Exported: C:/Users/user/AppData/Local/Temp/s6m/b-farmer-web

@@ -1,0 +1,7 @@
+﻿id,test,got,expected,verdict
+L01,"own runner process, same starttime and cmdline",owned,owned,PASS
+L02,PID reused by another program (different starttime),pid_reused,pid_reused,PASS
+L03,same starttime but cmdline is a different program,pid_reused,pid_reused,PASS
+L04,process gone,dead,dead,PASS
+L05,zombie process treated as not running,dead,dead,PASS
+L06,service name must match (--service web vs gateway),pid_reused,pid_reused,PASS

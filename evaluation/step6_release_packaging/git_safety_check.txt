@@ -1,0 +1,34 @@
+# Step 6A git safety check
+worktree: C:\Users\user\enose-step6-release-packaging
+branch: analysis/step6-release-packaging
+base commit: 2b4a1df2273635caab481d130791716f2f099289
+HEAD before final docs commit: 973be8bbef2d0b9ad70afc96757b902a002618de
+package source commit: 973be8bbef2d0b9ad70afc96757b902a002618de
+merge-base(HEAD, base) == base: True
+remote-tracking branches containing HEAD (expect none): none
+upstream configured: none
+files changed since base: 69; touching raw xlsx / labels / .pkl / prior Step 4B-5 evidence: none
+protected files (models, raw XLSX, labels, R1 candidate) re-hashed: 343; changed since Step 6A start: none
+
+# other worktrees (HEAD, status line count)
+enose-air-sensitivity-audit: HEAD 8b2221b0ce status_lines=0
+enose-feature-recovery-audit: HEAD 4517b3811f status_lines=0
+enose-fingerprint-study: HEAD 1f1f0e67ab status_lines=0
+enose-gateway-fix: HEAD 2e881c1ed9 status_lines=0
+enose-model-training: HEAD c0c7cf794a status_lines=0
+enose-r1-controlled-retraining: HEAD 811f287d68 status_lines=1
+enose-scan-path-release-audit: HEAD bc67f56cd7 status_lines=0
+enose-scanner-accuracy-validation: HEAD 205e003e52 status_lines=0
+enose-scanner-recovery: HEAD 799552c155 status_lines=0
+enose-scanner-recovery-step2-5: HEAD 4121bdac44 status_lines=0
+enose-single-scan-audit: HEAD f6a5b33aac status_lines=0
+enose-step4b-safeguards: HEAD 8e0515780e status_lines=0
+enose-step5-offline-acceptance: HEAD 2b4a1df227 status_lines=0
+enose-training-recovery: HEAD edc376d540 status_lines=0
+electronic-nose-pineapple-ripeness-assessment: HEAD 4e1a93d64f status_lines=1
+main workspace: only the pre-existing .mov deletion: True
+step5 worktree HEAD 2b4a1df2 and clean: True / True
+
+# release package secret scan (pinenose-rc-6a-973be8bb.tar.gz): hits=none; forbidden files checked by P03 (none)
+# actions not taken: no push / merge / rebase / history rewrite; no Raspberry Pi connection or network scan; no SSH or credentials; no real serial port; no deployment; no model approval; no change to models, raw XLSX or labels
+# network used only for: npm registry (dependency install), PyPI/piwheels JSON metadata (compatibility matrix), PyPI wheels (test venvs). All service tests ran on 127.0.0.1.

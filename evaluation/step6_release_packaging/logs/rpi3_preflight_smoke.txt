@@ -1,0 +1,18 @@
+# rpi3_preflight.py on the Windows x86_64 test host (NOT a Raspberry Pi), fresh site; exit 0
+[INFO] os: Windows 11
+[INFO] cpu_arch: AMD64：不是 Raspberry Pi 的架構（這次執行不是在目標機器上）
+[INFO] board: 無法讀取 /proc/device-tree/model（非 Raspberry Pi 或沒有權限）
+[INFO] glibc: unknown
+[PASS] python: 3.12.7（numpy 2.4.3、pandas 3.0.1、scikit-learn 1.8.0、scipy 1.17.1 需要 ≥ 3.11）
+[PASS] python_packages: 全部符合 requirements_release.txt
+[PASS] memory: 可用 2557 MB／總計 16010 MB（建議可用 ≥ 350 MB）
+[PASS] disk_release: C:\Users\user\AppData\Local\Temp\s6a\site_formal\releases\pinenose-rc-6a-973be8bb 可用 56703 MB
+[PASS] release_integrity: 34 個檔案 SHA-256 相符（release pinenose-rc-6a-973be8bb）
+[PASS] profile: profile=formal services=['gateway', 'unified', 'web'] lan_access=False
+[WARN] scan_readiness: SCAN DISABLED: AIR_MAX_AGE_NOT_CONFIGURED（尚未設定經核准的 AIR 有效期限）
+[PASS] disk_data: 資料資料夾可用 56703 MB
+[PASS] port_gateway: 127.0.0.1:5001
+[PASS] port_web: 127.0.0.1:5000
+[PASS] port_unified: 127.0.0.1:8000
+[INFO] serial_devices: 沒有偵測到 /dev/ttyACM*、/dev/ttyUSB*（Arduino 未接上或不是 Linux）
+PREFLIGHT OK（唯讀；未安裝、未修改、未開啟序列埠）
