@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Runtime AIR calibration
+air_base.json
+air_base_demo.json
+air_base_demo_real.json
+air_bas_demo_*.json
+air_history/
+
+# Runtime logs and temporary files
+*.log
+*.tmp
+*.bak
+*.bak_*
+*.tar.gz
+
+# Local secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Editor
+.vscode/
+.idea/

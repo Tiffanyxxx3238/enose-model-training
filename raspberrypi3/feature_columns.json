@@ -1,0 +1,13 @@
+[
+  "MQ3_std_norm",
+  "MQ3_range_norm",
+  "MQ2_MQ3_ratio",
+  "MQ3_MQ135_ratio",
+  "MQ9_slope",
+  "TGS2602_min_norm",
+  "MQ2_auc_norm",
+  "MQ2_mean_norm",
+  "MQ9_min_norm",
+  "TGS2602_std_norm",
+  "MQ9_delta_mean"
+]
