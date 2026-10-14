@@ -1,9 +1,0 @@
-$ C:/Users/user/AppData/Local/Programs/Microsoft VS Code/Code.exe C:\Users\user\AppData\Local\Temp\s5m\farmer\node_modules\eslint\bin\eslint.js .
-# cwd: C:\Users\user\AppData\Local\Temp\s5m\farmer
-
-
-C:\Users\user\AppData\Local\Temp\s5m\farmer\scripts\smoke-test.js
-  16:27  error  '__dirname' is not defined  no-undef
-
-✖ 1 problem (1 error, 0 warnings)
-

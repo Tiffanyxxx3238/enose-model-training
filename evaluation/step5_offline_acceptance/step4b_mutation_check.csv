@@ -1,5 +1,0 @@
-﻿mutation,expected_failing_tests,caught,exit_code,all_failing_runtime_tests
-no_cancel_recheck,A03-CANCEL-BEFORE-COMMIT,True,1,A03-CANCEL-BEFORE-COMMIT;A06-RACE-STRESS
-no_air_expiry,B10-AIR-EXPIRED,True,1,B10-AIR-EXPIRED;B31-CLI-AIR-SAME-RULES
-formal_accepts_engineering_model,C03-ENGINEERING-MODEL-FORMAL,True,1,C03-ENGINEERING-MODEL-FORMAL;C15-CLI-FAIL-CLOSED
-no_client_host_check,C09-ENGINEERING-LOCAL-ONLY,True,1,C09-ENGINEERING-LOCAL-ONLY

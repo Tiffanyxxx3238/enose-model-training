@@ -1,4 +1,0 @@
-﻿risk_score,column,n_days,n_errors,n_pineapples,auroc_day_weighted,auroc_pineapple_equal_weighted,boot_ci95_low,boot_ci95_high,boot_median,boot_P(auroc>0.5),boot_valid,boot_invalid_single_class,auroc_within_group_A,auroc_within_group_B,auroc_within_group_C,auroc_within_group_D
-1 - max_probability,error_score_maxprob,101,58,13,0.56,0.555,0.383,0.736,0.559,0.734,2000,0,0.289,0.65,0.8,0.2
-1 - top2_margin,error_score_margin,101,58,13,0.593,0.617,0.427,0.761,0.598,0.869,2000,0,0.337,0.651,0.85,0.2
-normalized_entropy,normalized_entropy,101,58,13,0.504,0.477,0.36,0.648,0.499,0.493,2000,0,0.316,0.595,0.575,0.2

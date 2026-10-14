@@ -1,5 +1,0 @@
-﻿group,n_pineapples,n_days,correct,errors,accuracy,error_rate,mean_max_prob,median_max_prob,median_top2_margin,median_norm_entropy,median_maxprob_correct,median_maxprob_error,hc_errors_ge0.70,hc_errors_ge0.80,hc_errors_ge0.90,stage_coverage,auroc[1 - max_probability],auroc[1 - top2_margin],auroc[normalized_entropy],auroc_note
-A,4,29,10,19,0.345,0.655,0.544,0.54,0.236,0.76,0.477,0.577,3,1,0,S0:9 S1:7 S2:10 S3:3,0.289,0.337,0.316,
-B,5,52,18,34,0.346,0.654,0.476,0.455,0.137,0.853,0.495,0.428,3,1,0,S0:9 S1:18 S2:17 S3:8,0.65,0.651,0.595,
-C,2,14,10,4,0.714,0.286,0.516,0.495,0.209,0.817,0.51,0.405,0,0,0,S0:14,0.8,0.85,0.575,
-D,2,6,5,1,0.833,0.167,0.582,0.54,0.331,0.81,0.532,0.636,0,0,0,S1:2 S3:4,0.2,0.2,0.2,

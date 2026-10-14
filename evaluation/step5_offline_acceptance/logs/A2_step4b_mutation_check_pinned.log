@@ -1,7 +1,0 @@
-$ C:/Users/user/AppData/Local/Temp/s5v/Scripts/python.exe -u C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation\_step4b_regression_run\run_mutations.py
-# cwd: C:\Users\user\enose-step5-offline-acceptance\Semester 2 Final Exam (三下-期末)\evaluation
-
-[CAUGHT] no_cancel_recheck: failing=['A03-CANCEL-BEFORE-COMMIT', 'A06-RACE-STRESS']
-[CAUGHT] no_air_expiry: failing=['B10-AIR-EXPIRED', 'B31-CLI-AIR-SAME-RULES']
-[CAUGHT] formal_accepts_engineering_model: failing=['C03-ENGINEERING-MODEL-FORMAL', 'C15-CLI-FAIL-CLOSED']
-[CAUGHT] no_client_host_check: failing=['C09-ENGINEERING-LOCAL-ONLY']

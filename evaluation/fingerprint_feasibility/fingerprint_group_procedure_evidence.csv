@@ -1,5 +1,0 @@
-﻿group,header_row,n_cols,fruit_mode,air_source,creator
-A,[1],"[25, 29]","{'PINEAPPLE': np.int64(27), 'AIR': np.int64(2)}",{'pid_specific': np.int64(29)},"['creator_1', 'creator_4']"
-B,[1],"[25, 29]","{'PINEAPPLE': np.int64(50), 'AIR': np.int64(2)}",{'pid_specific': np.int64(52)},"['creator_1', 'creator_2']"
-C,"[0, 1]",[25],{'none': np.int64(14)},"{'pid_specific': np.int64(12), 'shared_by_date': np.int64(2)}",['creator_3']
-D,[1],[25],{'PINEAPPLE': np.int64(6)},"{'pid_specific': np.int64(4), 'shared_by_date': np.int64(2)}",['creator_1']

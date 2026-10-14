@@ -1,4 +1,0 @@
-b-consumer-web-url ['entry-2426982d26301fa35bb8ae4358fdd2d6.js 3341436B'] | deploy URL injected: True | old Gateway hotspot IPs 192.168.43.251/172.20.10.2: False False | API version check present: True | MODEL_NOT_APPROVED message: False
-b-consumer-android ['entry-f3e301cc548cecd3fb844ca83aa08393.hbc 5204128B'] | deploy URL injected: False | old Gateway hotspot IPs 192.168.43.251/172.20.10.2: False False | API version check present: True | MODEL_NOT_APPROVED message: False
-b-farmer-web ['entry-1dd6ea59209b65ef5e762f5d832131e8.js 3243325B'] | deploy URL injected: False | old Gateway hotspot IPs 192.168.43.251/172.20.10.2: False False | API version check present: False | MODEL_NOT_APPROVED message: False
-b-farmer-android ['entry-2475ed1046b42118bee4f299b06a724b.hbc 4962709B'] | deploy URL injected: False | old Gateway hotspot IPs 192.168.43.251/172.20.10.2: False False | API version check present: False | MODEL_NOT_APPROVED message: False
